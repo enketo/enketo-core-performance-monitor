@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>bench3</h:title>
+    <model>
+      <instance>
+        <bench3 id="bench3" version="201503171628">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <start/>
+          <end/>
+          <health_survey/>
+          <data_entry>
+            <entry_enu/>
+            <missing_pages/>
+            <missing_pages_2/>
+          </data_entry>
+          <identification>
+            <rarepeat jr:template="">
+              <field_enu/>
+            </rarepeat>
+            <exper/>
+            <lga/>
+            <state/>
+          </identification>
+          <section_a>
+            <respondent_info_1/>
+            <respondent_present jr:template="">
+              <full_name/>
+              <position/>
+              <phone/>
+              <email/>
+              <training_experience/>
+              <years_position/>
+            </respondent_present>
+            <respondent_info_2/>
+            <respondent_not_present jr:template="">
+              <full_name_np/>
+              <position_np/>
+              <phone_np/>
+              <email_np/>
+            </respondent_not_present>
+            <phc_coordinator/>
+          </section_a>
+          <pb/>
+          <section_b_general_lga>
+            <lganote/>
+            <total_population/>
+            <num_ward/>
+            <num_villages/>
+            <rural/>
+            <semiurban/>
+            <urban/>
+          </section_b_general_lga>
+          <pc/>
+          <section_c_access_care>
+            <existing_facilities>
+              <note_existing_facilities/>
+              <num_phcentres/>
+              <num_wards_nophcentre/>
+              <num_clinics/>
+              <num_wards_noclinic/>
+              <num_wards_average_hc/>
+              <num_hpanddispensary/>
+              <num_villages_nofacility/>
+            </existing_facilities>
+            <additional_facilities>
+              <additional_facilities_note/>
+              <num_addition_facilities_subj/>
+              <num_additional_phcs_subj/>
+              <num_additional_phclinics_subj/>
+              <num_additional_hps_subj/>
+              <additional_facilities_skilled_delivery/>
+              <num_addition_facilities_skilled_delivery_subj/>
+              <num_additional_phclinics_skilled_delivery_subj/>
+              <num_additional_phcs_skilled_delivery_subj/>
+            </additional_facilities>
+            <pc3/>
+            <barriers_to_accessing_care>
+              <barriers/>
+              <barriers_other_BT/>
+            </barriers_to_accessing_care>
+            <cemoc>
+              <num_generalhospital/>
+              <num_tertiaryhospital/>
+              <pc43/>
+              <genhosp_csection_num/>
+              <num_csection_anesthesia/>
+              <num_theaters_nocsection/>
+              <theaters_nocsection_why_BT/>
+              <theatres_nocsection_note>
+                <theatres_nocsection_equipment/>
+                <theatres_nocsection_recurrentsupplies/>
+              </theatres_nocsection_note>
+              <pc48/>
+              <num_csection_subj/>
+            </cemoc>
+            <emergency_transport>
+              <transport_type/>
+              <transport_type_other/>
+              <num_vehicles/>
+              <num_drivers/>
+              <num_wards_novehicles/>
+              <num_wards_novehicles_vehicles_potentially_functional/>
+              <maintenance>
+                <transport_maintenance/>
+                <num_transport_all_maintenance/>
+                <num_transport_some_maintenance/>
+                <num_transport_none_maintenance/>
+              </maintenance>
+              <fuel>
+                <transport_fuel/>
+                <num_transport_all_fuel/>
+                <num_transport_some_fuel/>
+                <num_transport_none_fuel/>
+              </fuel>
+            </emergency_transport>
+          </section_c_access_care>
+          <pd/>
+          <existing_facilities_status>
+            <existing_phcentres>
+              <existing_phc_note/>
+              <num_phc_note/>
+              <phc_renovation>
+                <phc_renovation_note/>
+                <num_phc_renovation_major/>
+                <num_phc_renovation_minor/>
+                <num_phc_renovation_none/>
+              </phc_renovation>
+              <phc_staffhousing_note/>
+              <num_phc_adequate_staffhousing/>
+              <pd2/>
+              <num_phc_some_staffhousing/>
+              <num_phc_no_staffhousing/>
+              <phc__maintenance>
+                <phc_maintenance_note/>
+                <num_phc_all_maintenance/>
+                <num_phc_some_maintenane/>
+                <num_phc_none_maintenance/>
+              </phc__maintenance>
+              <phc_deliveries/>
+              <phc_fp/>
+              <phc_rdt/>
+              <pd18/>
+              <phc_act/>
+              <phc_pneumonia/>
+            </existing_phcentres>
+            <health_clinics>
+              <heatlh_clinics_note/>
+              <num_clinics_note/>
+              <clinic_renovation>
+                <clinic_renovation_note/>
+                <num_clinic_renovation_major/>
+                <num_clinic_renovation_minor/>
+                <num_clinic_renovation_none/>
+              </clinic_renovation>
+              <pd23/>
+              <clinic_maintenance>
+                <clinic_maintenance_note/>
+                <clinic_all_maintenance/>
+                <clinic_some_maintenane/>
+                <clinic_none_maintenance/>
+              </clinic_maintenance>
+              <clinic_deliveries/>
+              <clinic_fp/>
+              <clinic_rdt/>
+              <clinic_act/>
+              <pd100/>
+              <clinic_pneumonia/>
+            </health_clinics>
+            <existing_hp>
+              <existing_hp_note/>
+              <num_hp/>
+              <hp_renovation>
+                <hp_renovation_note/>
+                <num_hp_renovation_major/>
+                <num_hp_renovation_minor/>
+                <num_hp_renovation_none/>
+              </hp_renovation>
+              <pd33/>
+              <hp_maintenance>
+                <hp_maintenance_note/>
+                <hp_all_maintenance/>
+                <hp_some_maintenane/>
+                <hp_none_maintenance/>
+              </hp_maintenance>
+              <hp_deliveries/>
+              <hp_fp/>
+              <hp_rdt/>
+              <hp_act/>
+              <pdjaboi/>
+              <hp_pneumonia/>
+            </existing_hp>
+          </existing_facilities_status>
+          <pe/>
+          <supply_chain>
+            <stockouts_common/>
+            <stockouts>
+              <stockouts_reason/>
+              <stockouts_reason_other_BT/>
+            </stockouts>
+            <supply_chain_transport_note/>
+            <needs_supplychaintransport_store_to_warehouse/>
+            <needs_supplychaintransport_warehouse_to_facility/>
+          </supply_chain>
+          <staffing>
+            <total_staffing>
+              <staffing_note/>
+              <num_medicaldoctor/>
+              <num_nurses/>
+              <num_nursemidwives/>
+              <num_cho/>
+              <num_chew/>
+              <num_jchew/>
+              <num_pharmtech/>
+              <num_eho/>
+              <pf11/>
+              <num_mro/>
+              <num_labtech/>
+              <num_healthattendantsassistants/>
+            </total_staffing>
+            <staff_training>
+              <staff_training_note/>
+              <num_training_sba/>
+              <num_training_neonatalresucitation/>
+              <num_training_imnci/>
+              <num_training_anc/>
+              <num_training_fp/>
+              <pf2/>
+              <num_training_malaria/>
+              <staff_training_other_list>
+                <staff_training_other/>
+                <staff_training_other1/>
+                <staff_training_other2/>
+                <staff_training_other3/>
+                <staff_training_other4/>
+              </staff_training_other_list>
+              <attitude_impact/>
+              <training_attitude/>
+            </staff_training>
+            <pf3/>
+            <absenteeism_group>
+              <absenteeism/>
+              <routine_absentee/>
+              <absenteeism_reasons/>
+              <absenteeism_reasons_other_BT/>
+            </absenteeism_group>
+          </staffing>
+          <check12/>
+          <services>
+            <num_itn_lasttwoyears/>
+            <coverage_itn/>
+            <coverage_measles/>
+            <coverage_dpt3/>
+            <num_measles/>
+            <funding_vaccines_logistics/>
+            <num_mnch_week/>
+            <pg32/>
+            <funding_mnch_week_logistics/>
+            <num_vita_lastyear/>
+            <num_doses_deworming/>
+            <endemic_schisto/>
+            <num_sites_nutsupp/>
+            <num_sites_inpatient_sam/>
+            <num_nutsuppchildren_lastyear/>
+            <pg44/>
+            <num_inpatient_sam_lastyear/>
+            <ifa/>
+            <instdelivery_incentives/>
+            <instdelivery_incentives_describe_BT/>
+            <fp_types/>
+            <pffff62/>
+            <fp_commodities/>
+            <fp_logistics/>
+            <fp_chew_injectable/>
+            <public_awareness/>
+            <public_awareness_need/>
+            <campaign_topics>
+              <campaign_topics_note/>
+              <campaign_topic1/>
+              <pf2/>
+              <campaign_topic2/>
+              <campaign_topic3/>
+              <campaign_topic4/>
+            </campaign_topics>
+          </services>
+          <other_challenges>
+            <other_issues_BT/>
+            <main_challenges>
+              <main_challenges_note/>
+              <main_challenges1_BT/>
+              <main_challenges2_BT/>
+              <main_challenges3_BT/>
+              <main_challenges4_BT/>
+            </main_challenges>
+          </other_challenges>
+          <meta>
+            <instanceID/>
+          </meta>
+        </bench3>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/bench3/start" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/bench3/end" type="dateTime"/>
+      <bind nodeset="/bench3/health_survey" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/data_entry/entry_enu" required="true()" type="string"/>
+      <bind nodeset="/bench3/data_entry/missing_pages" required="true()" type="select1"/>
+      <bind nodeset="/bench3/data_entry/missing_pages_2" relevant="selected( /bench3/data_entry/missing_pages , 'yes')" type="string"/>
+      <bind nodeset="/bench3/identification/rarepeat/field_enu" required="true()" type="string"/>
+      <bind nodeset="/bench3/identification/exper" required="true()" type="string"/>
+      <bind nodeset="/bench3/identification/lga" required="true()" type="string"/>
+      <bind nodeset="/bench3/identification/state" required="true()" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_info_1" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_present/full_name" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_present/position" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_present/phone" type="int"/>
+      <bind nodeset="/bench3/section_a/respondent_present/email" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_a/respondent_present/training_experience" type="decimal"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_a/respondent_present/years_position" type="decimal"/>
+      <bind nodeset="/bench3/section_a/respondent_info_2" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_not_present/full_name_np" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_not_present/position_np" type="string"/>
+      <bind nodeset="/bench3/section_a/respondent_not_present/phone_np" type="int"/>
+      <bind nodeset="/bench3/section_a/respondent_not_present/email_np" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_a/phc_coordinator" type="int"/>
+      <bind nodeset="/bench3/pb" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_b_general_lga/lganote" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_b_general_lga/total_population" type="int"/>
+      <bind nodeset="/bench3/section_b_general_lga/num_ward" type="int"/>
+      <bind nodeset="/bench3/section_b_general_lga/num_villages" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/section_b_general_lga/rural" type="int"/>
+      <bind constraint=". +  /bench3/section_b_general_lga/rural  &lt;=100" nodeset="/bench3/section_b_general_lga/semiurban" type="int"/>
+      <bind constraint=". +  /bench3/section_b_general_lga/semiurban  +  /bench3/section_b_general_lga/rural  =100" jr:constraintMsg="Check to make sure that these percentages total to 100%." nodeset="/bench3/section_b_general_lga/urban" type="int"/>
+      <bind nodeset="/bench3/pc" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/existing_facilities/note_existing_facilities" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_phcentres" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_wards_nophcentre" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_clinics" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_wards_noclinic" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_wards_average_hc" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_hpanddispensary" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/existing_facilities/num_villages_nofacility" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/additional_facilities/additional_facilities_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/additional_facilities/num_addition_facilities_subj" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/additional_facilities/num_additional_phcs_subj" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/additional_facilities/num_additional_phclinics_subj" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/additional_facilities/num_additional_hps_subj" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/additional_facilities/additional_facilities_skilled_delivery" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/additional_facilities/num_addition_facilities_skilled_delivery_subj" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/additional_facilities/num_additional_phclinics_skilled_delivery_subj" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/additional_facilities/num_additional_phcs_skilled_delivery_subj" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/pc3" readonly="true()" type="string"/>
+      <bind constraint="count-selected(.) &lt;= 3" nodeset="/bench3/section_c_access_care/barriers_to_accessing_care/barriers" type="select"/>
+      <bind nodeset="/bench3/section_c_access_care/barriers_to_accessing_care/barriers_other_BT" relevant="selected( /bench3/section_c_access_care/barriers_to_accessing_care/barriers ,'other')" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/num_generalhospital" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/cemoc/num_tertiaryhospital" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/pc43" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/genhosp_csection_num" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/cemoc/num_csection_anesthesia" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/cemoc/num_theaters_nocsection" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/theaters_nocsection_why_BT" relevant=" /bench3/section_c_access_care/cemoc/num_theaters_nocsection &gt;0" type="string"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/theatres_nocsection_note" relevant=" /bench3/section_c_access_care/cemoc/num_theaters_nocsection &gt;0"/>
+      <bind constraint=". &lt;=  /bench3/section_c_access_care/cemoc/num_theaters_nocsection " nodeset="/bench3/section_c_access_care/cemoc/theatres_nocsection_note/theatres_nocsection_equipment" relevant=" /bench3/section_c_access_care/cemoc/num_theaters_nocsection &gt;0" type="int"/>
+      <bind constraint=". &lt;=  /bench3/section_c_access_care/cemoc/num_theaters_nocsection " nodeset="/bench3/section_c_access_care/cemoc/theatres_nocsection_note/theatres_nocsection_recurrentsupplies" relevant=" /bench3/section_c_access_care/cemoc/num_theaters_nocsection &gt;0" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/cemoc/pc48" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/cemoc/num_csection_subj" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/emergency_transport/transport_type" type="select"/>
+      <bind nodeset="/bench3/section_c_access_care/emergency_transport/transport_type_other" relevant="selected( /bench3/section_c_access_care/emergency_transport/transport_type ,'other')" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/num_vehicles" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/num_drivers" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/num_wards_novehicles" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/num_wards_novehicles_vehicles_potentially_functional" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/emergency_transport/maintenance/transport_maintenance" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_all_maintenance" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_some_maintenance" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_none_maintenance" type="int"/>
+      <bind nodeset="/bench3/section_c_access_care/emergency_transport/fuel/transport_fuel" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_all_fuel" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_some_fuel" type="int"/>
+      <bind constraint=". &gt;=0" jr:constraintMsg="Check to make sure that these percentages total to 100%." nodeset="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_none_fuel" type="int"/>
+      <bind nodeset="/bench3/pd" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/existing_phc_note" readonly="true()" type="string"/>
+      <bind constraint=". =  /bench3/section_c_access_care/existing_facilities/num_phcentres " nodeset="/bench3/existing_facilities_status/existing_phcentres/num_phc_note" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/phc_renovation_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_major" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_minor" type="int"/>
+      <bind constraint=". != '' and (. +  /bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_major  +  /bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_minor  =  /bench3/existing_facilities_status/existing_phcentres/num_phc_note )" jr:constraintMsg="Check to make sure that these numbers equal the total amount of PHCs" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_none" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_staffhousing_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/existing_facilities_status/existing_phcentres/num_phc_adequate_staffhousing" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/pd2" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/existing_facilities_status/existing_phcentres/num_phc_some_staffhousing" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_phcentres/num_phc_adequate_staffhousing  +  /bench3/existing_facilities_status/existing_phcentres/num_phc_some_staffhousing  =  /bench3/existing_facilities_status/existing_phcentres/num_phc_note " jr:constraintMsg="Check to make sure that these numbers equal the total amount of PHCs" nodeset="/bench3/existing_facilities_status/existing_phcentres/num_phc_no_staffhousing" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/phc_maintenance_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_all_maintenance" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_all_maintenance  &lt;=100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_some_maintenane" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_all_maintenance  +  /bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_some_maintenane  =100" jr:constraintMsg="Check to make sure that these percentages total to 100%." nodeset="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_none_maintenance" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_deliveries" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_fp" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_rdt" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_phcentres/pd18" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_act" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_phcentres/phc_pneumonia" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/heatlh_clinics_note" readonly="true()" type="string"/>
+      <bind constraint=". =  /bench3/section_c_access_care/existing_facilities/num_clinics " nodeset="/bench3/existing_facilities_status/health_clinics/num_clinics_note" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/clinic_renovation/clinic_renovation_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_major" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_minor" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_major  +  /bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_minor  =  /bench3/existing_facilities_status/health_clinics/num_clinics_note " jr:constraintMsg="Check to make sure that these numbers equal the total amount of Clinics" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_none" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/pd23" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_maintenance_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_all_maintenance" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_all_maintenance  &lt;=100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_some_maintenane" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_some_maintenane  +  /bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_all_maintenance  =100" jr:constraintMsg="Check to make sure that these numbers equal the total amount of Clinics" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_none_maintenance" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_deliveries" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_fp" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_rdt" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_act" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/health_clinics/pd100" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/health_clinics/clinic_pneumonia" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/existing_hp_note" readonly="true()" type="string"/>
+      <bind constraint=". =  /bench3/section_c_access_care/existing_facilities/num_hpanddispensary " nodeset="/bench3/existing_facilities_status/existing_hp/num_hp" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/hp_renovation/hp_renovation_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_major" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_minor" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_major  +  /bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_minor  =  /bench3/existing_facilities_status/existing_hp/num_hp " jr:constraintMsg="Make sure that the responses add up to the total number of Health Posts and Dispensaries." nodeset="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_none" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/pd33" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_maintenance_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_all_maintenance" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_all_maintenance  &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_some_maintenane" type="int"/>
+      <bind constraint=". +  /bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_some_maintenane  +  /bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_all_maintenance  = 100" jr:constraintMsg="Check to make sure that these percentages total to 100%." nodeset="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_none_maintenance" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_deliveries" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_fp" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_rdt" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_act" type="int"/>
+      <bind nodeset="/bench3/existing_facilities_status/existing_hp/pdjaboi" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/existing_facilities_status/existing_hp/hp_pneumonia" type="int"/>
+      <bind nodeset="/bench3/pe" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/supply_chain/stockouts_common" type="select1"/>
+      <bind nodeset="/bench3/supply_chain/stockouts/stockouts_reason" type="select"/>
+      <bind nodeset="/bench3/supply_chain/stockouts/stockouts_reason_other_BT" relevant="selected( /bench3/supply_chain/stockouts/stockouts_reason ,'other')" type="string"/>
+      <bind nodeset="/bench3/supply_chain/supply_chain_transport_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/supply_chain/needs_supplychaintransport_store_to_warehouse" type="string"/>
+      <bind nodeset="/bench3/supply_chain/needs_supplychaintransport_warehouse_to_facility" type="string"/>
+      <bind nodeset="/bench3/staffing/total_staffing/staffing_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_medicaldoctor" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_nurses" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_nursemidwives" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_cho" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_chew" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_jchew" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_pharmtech" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_eho" type="int"/>
+      <bind nodeset="/bench3/staffing/total_staffing/pf11" readonly="true()" type="string"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_mro" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_labtech" type="int"/>
+      <bind constraint=". &gt;=0" nodeset="/bench3/staffing/total_staffing/num_healthattendantsassistants" type="int"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_note" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_sba" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_neonatalresucitation" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_imnci" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_anc" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_fp" type="int"/>
+      <bind nodeset="/bench3/staffing/staff_training/pf2" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/num_training_malaria" type="int"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other1" type="string"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other2" type="string"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other3" type="string"/>
+      <bind nodeset="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other4" type="string"/>
+      <bind nodeset="/bench3/staffing/staff_training/attitude_impact" type="select1"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/staff_training/training_attitude" relevant="selected( /bench3/staffing/staff_training/attitude_impact , 'yes')" type="int"/>
+      <bind nodeset="/bench3/staffing/pf3" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/staffing/absenteeism_group/absenteeism" type="select1"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/staffing/absenteeism_group/routine_absentee" relevant="selected( /bench3/staffing/absenteeism_group/absenteeism , 'yes')" type="int"/>
+      <bind nodeset="/bench3/staffing/absenteeism_group/absenteeism_reasons" relevant="selected( /bench3/staffing/absenteeism_group/absenteeism , 'yes')" type="select"/>
+      <bind nodeset="/bench3/staffing/absenteeism_group/absenteeism_reasons_other_BT" relevant="selected( /bench3/staffing/absenteeism_group/absenteeism_reasons , 'other')" type="string"/>
+      <bind nodeset="/bench3/check12" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_itn_lasttwoyears" type="int"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/coverage_itn" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/services/coverage_measles" type="int"/>
+      <bind constraint=". &gt;= 0 and . &lt;= 100" nodeset="/bench3/services/coverage_dpt3" type="int"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_measles" type="int"/>
+      <bind nodeset="/bench3/services/funding_vaccines_logistics" type="select1"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_mnch_week" type="int"/>
+      <bind nodeset="/bench3/services/pg32" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/services/funding_mnch_week_logistics" type="select1"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_vita_lastyear" type="int"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_doses_deworming" type="int"/>
+      <bind nodeset="/bench3/services/endemic_schisto" type="select1"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_sites_nutsupp" type="int"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_sites_inpatient_sam" type="int"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_nutsuppchildren_lastyear" type="int"/>
+      <bind nodeset="/bench3/services/pg44" readonly="true()" type="string"/>
+      <bind constraint=". &gt;= 0" nodeset="/bench3/services/num_inpatient_sam_lastyear" type="int"/>
+      <bind nodeset="/bench3/services/ifa" type="select1"/>
+      <bind nodeset="/bench3/services/instdelivery_incentives" type="select1"/>
+      <bind nodeset="/bench3/services/instdelivery_incentives_describe_BT" relevant="selected( /bench3/services/instdelivery_incentives , 'yes')" type="string"/>
+      <bind nodeset="/bench3/services/fp_types" type="select"/>
+      <bind nodeset="/bench3/services/pffff62" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/services/fp_commodities" type="select1"/>
+      <bind nodeset="/bench3/services/fp_logistics" type="select1"/>
+      <bind nodeset="/bench3/services/fp_chew_injectable" type="select1"/>
+      <bind nodeset="/bench3/services/public_awareness" type="select1"/>
+      <bind nodeset="/bench3/services/public_awareness_need" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/campaign_topics_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/campaign_topic1" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/pf2" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/campaign_topic2" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/campaign_topic3" type="string"/>
+      <bind nodeset="/bench3/services/campaign_topics/campaign_topic4" type="string"/>
+      <bind nodeset="/bench3/other_challenges/other_issues_BT" type="string"/>
+      <bind nodeset="/bench3/other_challenges/main_challenges/main_challenges_note" readonly="true()" type="string"/>
+      <bind nodeset="/bench3/other_challenges/main_challenges/main_challenges1_BT" type="string"/>
+      <bind nodeset="/bench3/other_challenges/main_challenges/main_challenges2_BT" type="string"/>
+      <bind nodeset="/bench3/other_challenges/main_challenges/main_challenges3_BT" type="string"/>
+      <bind nodeset="/bench3/other_challenges/main_challenges/main_challenges4_BT" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/bench3/meta/instanceID" readonly="true()" type="string"/>
+      <bind calculate="'d76ca92e248a43af9707d0ff042ccb81'" nodeset="/bench3/formhub/uuid" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/bench3/health_survey">
+      <label>HEALTH SURVEY</label>
+    </input>
+    <group ref="/bench3/data_entry">
+      <label>Data Entry Information</label>
+      <input ref="/bench3/data_entry/entry_enu">
+        <label>Data Entry Enumerator's Full Name</label>
+      </input>
+      <select1 ref="/bench3/data_entry/missing_pages">
+        <label>Are there any missing pages from the survey?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input appearance="textarea" ref="/bench3/data_entry/missing_pages_2">
+        <label>Please describe pages and/or questions that are missing:</label>
+      </input>
+    </group>
+    <group ref="/bench3/identification">
+      <label>Identification Information</label>
+      <group ref="/bench3/identification/rarepeat">
+        <label/>
+        <repeat nodeset="/bench3/identification/rarepeat">
+          <input ref="/bench3/identification/rarepeat/field_enu">
+            <label>Field Enumerator's Full Name</label>
+          </input>
+        </repeat>
+      </group>
+      <input ref="/bench3/identification/exper">
+        <label>Expert's Full Name</label>
+      </input>
+      <input ref="/bench3/identification/lga">
+        <label>LGA</label>
+      </input>
+      <input ref="/bench3/identification/state">
+        <label>State</label>
+      </input>
+    </group>
+    <group ref="/bench3/section_a">
+      <label>A) Respondent Information</label>
+      <input ref="/bench3/section_a/respondent_info_1">
+        <label>A1. Health Sector Respondents Present</label>
+      </input>
+      <group ref="/bench3/section_a/respondent_present">
+        <label/>
+        <repeat nodeset="/bench3/section_a/respondent_present">
+          <input ref="/bench3/section_a/respondent_present/full_name">
+            <label>Full Name</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_present/position">
+            <label>Position (including organizational affiliation)</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_present/phone">
+            <label>Phone</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_present/email">
+            <label>Email</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_present/training_experience">
+            <label>How many years has respondent worked in the health sector?</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_present/years_position">
+            <label>How long has the respondent been in their current position?</label>
+          </input>
+        </repeat>
+      </group>
+      <input ref="/bench3/section_a/respondent_info_2">
+        <label>A2. Health Sector Respondents Not Present</label>
+        <hint>Refers to any members of the LGA office staff who work on the health sector, but who are not present on the day of the interview.</hint>
+      </input>
+      <group ref="/bench3/section_a/respondent_not_present">
+        <label/>
+        <repeat nodeset="/bench3/section_a/respondent_not_present">
+          <input ref="/bench3/section_a/respondent_not_present/full_name_np">
+            <label>Full Name</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_not_present/position_np">
+            <label>Position</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_not_present/phone_np">
+            <label>Phone</label>
+          </input>
+          <input ref="/bench3/section_a/respondent_not_present/email_np">
+            <label>Email</label>
+          </input>
+        </repeat>
+      </group>
+      <input ref="/bench3/section_a/phc_coordinator">
+        <label>A3. How long has the Director Primary Health Care (PHC) / PHC Coordinator been in the current LGA?</label>
+      </input>
+    </group>
+    <input appearance="page-break" ref="/bench3/pb">
+      <label>.</label>
+    </input>
+    <group ref="/bench3/section_b_general_lga">
+      <label>B) General LGA</label>
+      <input ref="/bench3/section_b_general_lga/lganote">
+        <label>We would like to start by asking you some general questions about your LGA.</label>
+      </input>
+      <input ref="/bench3/section_b_general_lga/total_population">
+        <label>B1. What is the total population of your LGA?</label>
+      </input>
+      <input ref="/bench3/section_b_general_lga/num_ward">
+        <label>B2. How many Wards are in the LGA?</label>
+      </input>
+      <input ref="/bench3/section_b_general_lga/num_villages">
+        <label>B3. How many Villages/Towns are in the LGA?</label>
+        <hint>Please ask respondent panel for their best estimate.</hint>
+      </input>
+      <input ref="/bench3/section_b_general_lga/rural">
+        <label>B4. What percentage of the LGA would you say is rural?</label>
+        <hint>Rural refers to areas mostly consisting of villages and small towns only, often highly agricultural.</hint>
+      </input>
+      <input ref="/bench3/section_b_general_lga/semiurban">
+        <label>B5. What percentage of the LGA would you say is semi-urban?</label>
+        <hint>Semi-urban refers to areas that connect urban and rural areas, are not as sparsely populated as traditional rural areas, or are areas that cannot be cleanly classified as either rural or urban.</hint>
+      </input>
+      <input ref="/bench3/section_b_general_lga/urban">
+        <label>B6. What percentage of the LGA would you say is urban?</label>
+        <hint>Urban refers to areas mostly consisting of highly dense cities and larger towns. Check to make sure that these percentages total to 100%.</hint>
+      </input>
+    </group>
+    <input appearance="page-break" ref="/bench3/pc">
+      <label>.</label>
+    </input>
+    <group ref="/bench3/section_c_access_care">
+      <label>C) Access to Care</label>
+      <group ref="/bench3/section_c_access_care/existing_facilities">
+        <label>C1: Existing Facilities</label>
+        <input ref="/bench3/section_c_access_care/existing_facilities/note_existing_facilities">
+          <label>To start with, we will be asking several questions about different types of public health facilities in your LGA.</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_phcentres">
+          <label>C1.1 How many PRIMARY HEALTH CENTRES [PHC] are in the LGA? *</label>
+          <hint>The * indicates that the response will be used later in the questionnaire.</hint>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_wards_nophcentre">
+          <label>C1.2 How many Wards have no PRIMARY HEALTH CENTRE?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_clinics">
+          <label>C1.3 How many HEALTH CLINICS are in the LGA? **</label>
+          <hint>The ** indicates that the response will be used later in the questionnaire.</hint>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_wards_noclinic">
+          <label>C1.4 How many Wards have no HEALTH CLINICS at all?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_wards_average_hc">
+          <label>C1.5 What is the average number of HEALTH CLINICS per Ward in your LGA?</label>
+          <hint>The respondent panel should provide an estimated average here - no need to calculate.</hint>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_hpanddispensary">
+          <label>C1.6 How many HEALTH POSTS and DISPENSARIES are in the LGA? ***</label>
+          <hint>The *** indicates that the response will be used later in the questionnaire.</hint>
+        </input>
+        <input ref="/bench3/section_c_access_care/existing_facilities/num_villages_nofacility">
+          <label>C1.7 How many Villages/Towns have no health facility at all?</label>
+          <hint>Villages / town does not include hamlets.</hint>
+        </input>
+      </group>
+      <group ref="/bench3/section_c_access_care/additional_facilities">
+        <label>C2: Additional Facilities</label>
+        <input ref="/bench3/section_c_access_care/additional_facilities/additional_facilities_note">
+          <label>We would now like to ask, based on your professional expert opinion, about how many additional facilities would be needed in your LGA in order for every household to be able to reach a health facility within 1 hour walking.</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_addition_facilities_subj">
+          <label>C2.1 In order to reach this goal, how many additional:</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_additional_phcs_subj">
+          <label>PRIMAY HEALTH CENTRES [PHCs] would be needed?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_additional_phclinics_subj">
+          <label>HEALTH CLINICS would be needed?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_additional_hps_subj">
+          <label>HEALTH POSTS would be needed?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/additional_facilities_skilled_delivery">
+          <label>In your opinion, in order for every household to have access, by walking or referral transport, to facilities capable of performing skilled delivery within 1 hour. Please take into account the geography, demography, and transport infrastructure in your consideration of how many additional facilities would be necessary.</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_addition_facilities_skilled_delivery_subj">
+          <label>C2.2 In order to reach this goal, how many additional:</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_additional_phclinics_skilled_delivery_subj">
+          <label>HEALTH CLINICS would be needed?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/additional_facilities/num_additional_phcs_skilled_delivery_subj">
+          <label>PRIMAY HEALTH CENTRES [PHCs] would be needed?</label>
+        </input>
+      </group>
+      <input appearance="page-break" ref="/bench3/section_c_access_care/pc3">
+        <label>.</label>
+      </input>
+      <group ref="/bench3/section_c_access_care/barriers_to_accessing_care">
+        <label>C3: Barriers to Accessing Care</label>
+        <select ref="/bench3/section_c_access_care/barriers_to_accessing_care/barriers">
+          <label>C3.1 What are the primary barriers to accessing health care in your LGA? Pick the top three reasons.</label>
+          <hint>SELECT ONLY THE 3 MOST IMPORTANT RESPONSES. &quot;Other&quot; counts as one of the three.</hint>
+          <item>
+            <label>User fees</label>
+            <value>user_fees</value>
+          </item>
+          <item>
+            <label>Geographic distance or terrain</label>
+            <value>distance</value>
+          </item>
+          <item>
+            <label>Attitude of health care providers</label>
+            <value>attitude</value>
+          </item>
+          <item>
+            <label>Health care awareness and care-seeking behavior</label>
+            <value>awareness</value>
+          </item>
+          <item>
+            <label>Cultural barriers</label>
+            <value>cultural</value>
+          </item>
+          <item>
+            <label>Religious barriers</label>
+            <value>religious</value>
+          </item>
+          <item>
+            <label>Reputation of public health facilities</label>
+            <value>reputation</value>
+          </item>
+          <item>
+            <label>People choose to go to private sector facilities</label>
+            <value>private_sector</value>
+          </item>
+          <item>
+            <label>OTHER</label>
+            <value>other</value>
+          </item>
+        </select>
+        <input appearance="textarea" ref="/bench3/section_c_access_care/barriers_to_accessing_care/barriers_other_BT">
+          <label>If other, please specify.</label>
+        </input>
+      </group>
+      <group ref="/bench3/section_c_access_care/cemoc">
+        <label>C4: Comprehensive Emergency Obstetric Care</label>
+        <input ref="/bench3/section_c_access_care/cemoc/num_generalhospital">
+          <label>C4.1 How many General Hospitals are there in the LGA?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/cemoc/num_tertiaryhospital">
+          <label>C4.2 How many Tertiary (Teaching Hospital and Federal Medical Centres) are there in the LGA?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/section_c_access_care/cemoc/pc43">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/cemoc/genhosp_csection_num">
+          <label>C4.3 How many General Hospitals conduct Caesarean sections?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/cemoc/num_csection_anesthesia">
+          <label>C4.4 How many anaesthetic nurses and doctors that can administer spinal or general anesthesia are in the LGA?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/cemoc/num_theaters_nocsection">
+          <label>C4.5 How many public facilities have operating theaters that are currently not being used to conduct Caesearean sections?</label>
+        </input>
+        <input appearance="textarea" ref="/bench3/section_c_access_care/cemoc/theaters_nocsection_why_BT">
+          <label>C4.6 If any, why?</label>
+          <hint>Only ask this question and question C4.7 if there are operating theatres that are not currently being used to conduct Caesarean sections. Reasons can include equipment and recurrent needs, but could also include things like lack of personnel skilled in performing Caesarean sections, etc.</hint>
+        </input>
+        <group ref="/bench3/section_c_access_care/cemoc/theatres_nocsection_note">
+          <label>C4.7 Of the operating theaters that are not currently being used to conduct Caesarean sections, how many:</label>
+          <input ref="/bench3/section_c_access_care/cemoc/theatres_nocsection_note/theatres_nocsection_equipment">
+            <label>C4.7.1 lack equipment (i.e., surgical equipment, operating table)?</label>
+          </input>
+          <input ref="/bench3/section_c_access_care/cemoc/theatres_nocsection_note/theatres_nocsection_recurrentsupplies">
+            <label>C4.7.2 lack recurrent needs, like medicines and supplies (i.e., suture, anesthetics)?</label>
+          </input>
+        </group>
+        <input appearance="page-break" ref="/bench3/section_c_access_care/cemoc/pc48">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/cemoc/num_csection_subj">
+          <label>C4.8 In your professional opinion, in order to take a pregnant woman from any primary care facility to a public facility that can conduct caesarean section within 45 minutes, how many additional facilities would be necessary?</label>
+        </input>
+      </group>
+      <group ref="/bench3/section_c_access_care/emergency_transport">
+        <label>C5: Emergency Transport</label>
+        <select ref="/bench3/section_c_access_care/emergency_transport/transport_type">
+          <label>C5.1 What type(s) of vehicles are used for emergency transport in the LGA?</label>
+          <hint>Select all that apply.</hint>
+          <item>
+            <label>Car</label>
+            <value>car</value>
+          </item>
+          <item>
+            <label>Ambulance</label>
+            <value>ambulance</value>
+          </item>
+          <item>
+            <label>Motorbike</label>
+            <value>motorbike</value>
+          </item>
+          <item>
+            <label>Boat</label>
+            <value>boat</value>
+          </item>
+          <item>
+            <label>Kekenapep</label>
+            <value>kekenapep</value>
+          </item>
+          <item>
+            <label>OTHER</label>
+            <value>other</value>
+          </item>
+        </select>
+        <input ref="/bench3/section_c_access_care/emergency_transport/transport_type_other">
+          <label>C5.2 Please specify other</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/emergency_transport/num_vehicles">
+          <label>C5.3 How many ambulances/emergency vehicles are in the LGA?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/emergency_transport/num_drivers">
+          <label>C5.4 How many drivers for these vehicles are in the LGA?</label>
+        </input>
+        <input ref="/bench3/section_c_access_care/emergency_transport/num_wards_novehicles">
+          <label>C5.5 How many Wards have no fully functional emergency transport vehicle?</label>
+          <hint>Fully functional: in routine use now and not requiring any significant repairs</hint>
+        </input>
+        <input ref="/bench3/section_c_access_care/emergency_transport/num_wards_novehicles_vehicles_potentially_functional">
+          <label>C5.6 Of the wards with no functional emergency transport vehicle, how many have an existing vehicle that could be made functional with repairs?</label>
+        </input>
+        <group ref="/bench3/section_c_access_care/emergency_transport/maintenance">
+          <input ref="/bench3/section_c_access_care/emergency_transport/maintenance/transport_maintenance">
+            <label>C5.7 Of the ambulances/emergency transport vehicles in the LGA, how many/what percentage would you say have:</label>
+            <hint>Provide the option for the respondent to answer with either a number or a percentage, estimates acceptable.</hint>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_all_maintenance">
+            <label>most/all of the funding needed for routine maintenance?</label>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_some_maintenance">
+            <label>some of the funding needed for routine maintenance?</label>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/maintenance/num_transport_none_maintenance">
+            <label>very little/none of the funding needed for routine maintenance?</label>
+            <hint>Make sure that the responses add up to the total number of vehicles or 100%</hint>
+          </input>
+        </group>
+        <group ref="/bench3/section_c_access_care/emergency_transport/fuel">
+          <input ref="/bench3/section_c_access_care/emergency_transport/fuel/transport_fuel">
+            <label>C5.8 Of the ambulances/emergency transport vehicles in the LGA, how many/what percentage would you say have:</label>
+            <hint>Provide the option for the respondent to answer with either a number or a percentage, estimates acceptable.</hint>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_all_fuel">
+            <label>most/all of the funding needed for fuel?</label>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_some_fuel">
+            <label>some of the funding needed for fuel?</label>
+          </input>
+          <input ref="/bench3/section_c_access_care/emergency_transport/fuel/num_transport_none_fuel">
+            <label>very little/none of the funding needed for fuel?</label>
+            <hint>Make sure that the responses add up to the total number of vehicles or 100%</hint>
+          </input>
+        </group>
+      </group>
+    </group>
+    <input appearance="page-break" ref="/bench3/pd">
+      <label>.</label>
+    </input>
+    <group ref="/bench3/existing_facilities_status">
+      <label>D) Status of Existing Health Facilities</label>
+      <group ref="/bench3/existing_facilities_status/existing_phcentres">
+        <label>D1: Existing Primary Health Centres</label>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/existing_phc_note">
+          <label>The next set of questions apply only to the Primary Health Centres / PHCs in your LGA.</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/num_phc_note">
+          <label>D1.1 Transfer and confirm the number of PHCs from Question C1.1, indicated by *.</label>
+        </input>
+        <group ref="/bench3/existing_facilities_status/existing_phcentres/phc_renovation">
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/phc_renovation_note">
+            <label>D1.2 Of the Primary Health Centres / PHCs in your LGA, how many would you say require:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_major">
+            <label>major renovation?</label>
+            <hint>Major renovation refers to situations where the building is not useable or not safe for patients.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_minor">
+            <label>minor renovation?</label>
+            <hint>Minor renovation refers to situations where the building is useable, but needs small-scale reconstruction or investment to be upgraded.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_renovation/num_phc_renovation_none">
+            <label>no renovation?</label>
+            <hint>Make sure that the responses add up to the total number of PHCs.</hint>
+          </input>
+        </group>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_staffhousing_note">
+          <label>D1.3 How many PHCs have:</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/num_phc_adequate_staffhousing">
+          <label>adequate staff housing, requiring no further investment?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/existing_phcentres/pd2">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/num_phc_some_staffhousing">
+          <label>some staff housing, but require further investment?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/num_phc_no_staffhousing">
+          <label>no staff housing?</label>
+          <hint>Make sure that the responses add up to the total number of PHCs</hint>
+        </input>
+        <group ref="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance">
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/phc_maintenance_note">
+            <label>D1.4 Regarding the budget line needed for maintenance of power and water sources (i.e., generator, borehole) and for routine facilities maintenance (i.e., cleaning supplies, phone credit, etc.), what percentage of facilities have:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_all_maintenance">
+            <label>adequate funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_some_maintenane">
+            <label>some, but inadequate, funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_phcentres/phc__maintenance/num_phc_none_maintenance">
+            <label>very little/none of the necessary funds in their budget line?</label>
+            <hint>Make sure that the responses add up to 100%</hint>
+          </input>
+        </group>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_deliveries">
+          <label>D1.5 Approximately what percentage of PHCs conduct deliveries?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_fp">
+          <label>D1.6 Approximately what percentage of PHCs offer family planning services?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_rdt">
+          <label>D1.7 Approximately what percentage of PHCs use RDTs to diagnose malaria?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/existing_phcentres/pd18">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_act">
+          <label>D1.8 Approximately what percentage of PHCs use ACT to treat malaria?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_phcentres/phc_pneumonia">
+          <label>D1.9 Approximately what percentage of PHCs use antibiotics to treat pneumonia in children?</label>
+        </input>
+      </group>
+      <group ref="/bench3/existing_facilities_status/health_clinics">
+        <label>D2: Existing Health Clinics</label>
+        <input ref="/bench3/existing_facilities_status/health_clinics/heatlh_clinics_note">
+          <label>The next set of questions apply only to the Health Clinics in your LGA.</label>
+          <hint>Skip this section ONLY if there are zero Health Clinics existing in the LGA.</hint>
+        </input>
+        <input ref="/bench3/existing_facilities_status/health_clinics/num_clinics_note">
+          <label>D2.1 Transfer and confirm the number of Clinics from Question C1.3, indicated by **.</label>
+        </input>
+        <group ref="/bench3/existing_facilities_status/health_clinics/clinic_renovation">
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_renovation/clinic_renovation_note">
+            <label>D2.2 Of the Clinics in your LGA, how many would you say require:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_major">
+            <label>major renovation?</label>
+            <hint>Major renovation refers to situations where the building is not useable or not safe for patients.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_minor">
+            <label>minor renovation?</label>
+            <hint>Minor renovation refers to situations where the building is useable, but needs small-scale reconstruction or investment to be upgraded.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_renovation/num_clinic_renovation_none">
+            <label>no renovation?</label>
+            <hint>Make sure that the responses add up to the total number of Clinics.</hint>
+          </input>
+        </group>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/health_clinics/pd23">
+          <label>.</label>
+        </input>
+        <group ref="/bench3/existing_facilities_status/health_clinics/clinic_maintenance">
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_maintenance_note">
+            <label>D2.3 Regarding the budget line needed for maintenance of power and water sources (i.e., generator, borehole) and for routine facilities maintenance (i.e., cleaning supplies, phone credit, etc.), what percentage of Clinics have:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_all_maintenance">
+            <label>adequate funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_some_maintenane">
+            <label>some, but inadequate, funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/health_clinics/clinic_maintenance/clinic_none_maintenance">
+            <label>very little/none of the necessary funds in their budget line?</label>
+            <hint>Make sure that the responses add up to 100%</hint>
+          </input>
+        </group>
+        <input ref="/bench3/existing_facilities_status/health_clinics/clinic_deliveries">
+          <label>D2.4 Approximately what percentage of Health Clinics conduct deliveries?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/health_clinics/clinic_fp">
+          <label>D2.5 Approximately what percentage of Health Clinics offer family planning services?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/health_clinics/clinic_rdt">
+          <label>D2.6 Approximately what percentage of Health Clinics use RDTs to diagnose malaria?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/health_clinics/clinic_act">
+          <label>D2.7 Approximately what percentage of Health Clinics use ACT to treat malaria?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/health_clinics/pd100">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/health_clinics/clinic_pneumonia">
+          <label>D2.8 Approximately what percentage of Health Clinics use antibiotics to treat pneumonia in children?</label>
+        </input>
+      </group>
+      <group ref="/bench3/existing_facilities_status/existing_hp">
+        <label>D3) Existing Health Posts</label>
+        <input ref="/bench3/existing_facilities_status/existing_hp/existing_hp_note">
+          <label>The next set of questions apply only to the Health Posts and Dispensaries in your LGA.</label>
+          <hint>Skip this section ONLY if there are zero Health Posts and Dispensaries existing in the LGA.</hint>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_hp/num_hp">
+          <label>D3.1 Transfer and confirm the number of Health Posts and Dispensaries from Question C1.6, indicated by ***.</label>
+        </input>
+        <group ref="/bench3/existing_facilities_status/existing_hp/hp_renovation">
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_renovation/hp_renovation_note">
+            <label>D3.2 Of the Health Posts and Dispensaries in your LGA, how many would you say require:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_major">
+            <label>major renovation?</label>
+            <hint>Major renovation refers to situations where the building is not useable or not safe for patients.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_minor">
+            <label>minor renovation?</label>
+            <hint>Minor renovation refers to situations where the building is useable, but needs small-scale reconstruction or investment to be upgraded.</hint>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_renovation/num_hp_renovation_none">
+            <label>no renovation?</label>
+            <hint>Make sure that the responses add up to the total number of Health Posts and Dispensaries.</hint>
+          </input>
+        </group>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/existing_hp/pd33">
+          <label>.</label>
+        </input>
+        <group ref="/bench3/existing_facilities_status/existing_hp/hp_maintenance">
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_maintenance_note">
+            <label>D3.3 Regarding the budget line needed for maintenance of power and water sources (i.e., generator, borehole) and for routine facilities maintenance (i.e., cleaning supplies, phone credit, etc.), what percentage of Health Posts or Dispensaries have:</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_all_maintenance">
+            <label>adequate funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_some_maintenane">
+            <label>some, but inadequate, funds in their budget line?</label>
+          </input>
+          <input ref="/bench3/existing_facilities_status/existing_hp/hp_maintenance/hp_none_maintenance">
+            <label>very little/none of the necessary funds in their budget line?</label>
+            <hint>Make sure that the responses add up to 100%</hint>
+          </input>
+        </group>
+        <input ref="/bench3/existing_facilities_status/existing_hp/hp_deliveries">
+          <label>D3.4 Approximately what percentage of Health Posts and Dispensaries conduct deliveries?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_hp/hp_fp">
+          <label>D3.5 Approximately what percentage of Health Posts and Dispensaries offer family planning services?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_hp/hp_rdt">
+          <label>D3.6 Approximately what percentage of Health Posts and Dispensaries use RDTs to diagnose malaria?</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_hp/hp_act">
+          <label>D3.7 Approximately what percentage of Health Posts and Dispensaries use ACT to treat malaria?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/existing_facilities_status/existing_hp/pdjaboi">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/existing_facilities_status/existing_hp/hp_pneumonia">
+          <label>D3.8 Approximately what percentage of Health Posts and Dispensaries use antibiotics to treat pneumonia in children?</label>
+        </input>
+      </group>
+    </group>
+    <input appearance="page-break" ref="/bench3/pe">
+      <label>.</label>
+    </input>
+    <group ref="/bench3/supply_chain">
+      <label>E) Supply Chain</label>
+      <select1 ref="/bench3/supply_chain/stockouts_common">
+        <label>E1 Are stockouts of essential medicines and consumables common in your LGA?</label>
+        <hint>This refers to essential drugs being out of stock [OS].</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <group ref="/bench3/supply_chain/stockouts">
+        <select ref="/bench3/supply_chain/stockouts/stockouts_reason">
+          <label>E2 Do stockouts of medicines and consumables occur at health facilities in the LGA because of:</label>
+          <hint>Select All that Apply</hint>
+          <item>
+            <label>inadequate quantitites of necessary items within the LGA?</label>
+            <value>quantities</value>
+          </item>
+          <item>
+            <label>inadequate forecasting and management of supplies at the facility level?</label>
+            <value>forecasting</value>
+          </item>
+          <item>
+            <label>inadequate logistics for the distribution of supplies in the LGA?</label>
+            <value>logistics</value>
+          </item>
+          <item>
+            <label>OTHER</label>
+            <value>other</value>
+          </item>
+        </select>
+        <input appearance="textarea" ref="/bench3/supply_chain/stockouts/stockouts_reason_other_BT">
+          <label>E3 If other, please specify.</label>
+        </input>
+      </group>
+      <input ref="/bench3/supply_chain/supply_chain_transport_note">
+        <label>E4 What additional transport provisions, not necessarily ambulances, are needed to support the distribution of medications and consumables:</label>
+        <hint>Response determined by the professional opinion of the respondent panel, no need to calculate.</hint>
+      </input>
+      <input ref="/bench3/supply_chain/needs_supplychaintransport_store_to_warehouse">
+        <label>from state stores to LGA warehouses?</label>
+        <hint>Confirm the response by reading back.</hint>
+      </input>
+      <input ref="/bench3/supply_chain/needs_supplychaintransport_warehouse_to_facility">
+        <label>from LGA warehouses to facilities?</label>
+        <hint>Confirm the response by reading back.</hint>
+      </input>
+    </group>
+    <group ref="/bench3/staffing">
+      <label>F) Staffing</label>
+      <group ref="/bench3/staffing/total_staffing">
+        <label>F1: Total Staffing</label>
+        <input ref="/bench3/staffing/total_staffing/staffing_note">
+          <label>F1.1 How many of each type of staff below are currently employed in the LGA?</label>
+          <hint>Official numbers preferred. Please ask the respondent panel to refer to lists/records of staff numbers if needed.</hint>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_medicaldoctor">
+          <label>Medical Doctors/Officers</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_nurses">
+          <label>Nurses</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_nursemidwives">
+          <label>Nurse-Midwives</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_cho">
+          <label>CHOs</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_chew">
+          <label>CHEWs</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_jchew">
+          <label>JCHEWs</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_pharmtech">
+          <label>Pharmacy Technicians</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_eho">
+          <label>Environmental Health Officers</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/staffing/total_staffing/pf11">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_mro">
+          <label>Medical Records Officers</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_labtech">
+          <label>Lab Technicians</label>
+        </input>
+        <input ref="/bench3/staffing/total_staffing/num_healthattendantsassistants">
+          <label>Health Attendants/Assistants</label>
+        </input>
+      </group>
+      <group ref="/bench3/staffing/staff_training">
+        <label>F2: Training Needs</label>
+        <input ref="/bench3/staffing/staff_training/staff_training_note">
+          <label>F2.1 Approximately what percentage of current staff need in-service training on:</label>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_sba">
+          <label>skilled delivery and basic emergency obstetric care?</label>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_neonatalresucitation">
+          <label>neonatal resuscitation?</label>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_imnci">
+          <label>IMNCH?</label>
+          <hint>IMNCH: Integrated Maternal, Newborn and Child Health</hint>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_anc">
+          <label>antenatal care?</label>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_fp">
+          <label>family planning?</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/staffing/staff_training/pf2">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/staffing/staff_training/num_training_malaria">
+          <label>malaria case management?</label>
+        </input>
+        <group ref="/bench3/staffing/staff_training/staff_training_other_list">
+          <input ref="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other">
+            <label>F2.2 What are the top four major topics on which the current staff require in-service training?</label>
+          </input>
+          <input ref="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other1">
+            <label>1</label>
+          </input>
+          <input ref="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other2">
+            <label>2</label>
+          </input>
+          <input ref="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other3">
+            <label>3</label>
+          </input>
+          <input ref="/bench3/staffing/staff_training/staff_training_other_list/staff_training_other4">
+            <label>4</label>
+          </input>
+        </group>
+        <select1 ref="/bench3/staffing/staff_training/attitude_impact">
+          <label>F2.3 Is attitude of health workers a challenge to patients' attendance and quality of care?</label>
+          <item>
+            <label>Yes</label>
+            <value>yes</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>no</value>
+          </item>
+        </select1>
+        <input ref="/bench3/staffing/staff_training/training_attitude">
+          <label>F2.4 If yes, approximately what percentage of health workers need training in inter-personal communication?</label>
+        </input>
+      </group>
+      <input appearance="page-break" ref="/bench3/staffing/pf3">
+        <label>.</label>
+      </input>
+      <group ref="/bench3/staffing/absenteeism_group">
+        <label>F3: Absenteeism</label>
+        <select1 ref="/bench3/staffing/absenteeism_group/absenteeism">
+          <label>F3.1 Is staff absenteeism a major challenge in your LGA?</label>
+          <item>
+            <label>Yes</label>
+            <value>yes</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>no</value>
+          </item>
+        </select1>
+        <input ref="/bench3/staffing/absenteeism_group/routine_absentee">
+          <label>F3.2 What percentage of staff do you think is routinely absent from work?</label>
+        </input>
+        <select ref="/bench3/staffing/absenteeism_group/absenteeism_reasons">
+          <label>F3.3 What are the major reasons for staff absenteeism?</label>
+          <hint>Select as many as are applicable.</hint>
+          <item>
+            <label>Lack of staff quarters</label>
+            <value>lack_quarters</value>
+          </item>
+          <item>
+            <label>Private practice</label>
+            <value>privatepharmacies</value>
+          </item>
+          <item>
+            <label>Lack of supervision</label>
+            <value>lack_supervision</value>
+          </item>
+          <item>
+            <label>Low salaries</label>
+            <value>low_salaries</value>
+          </item>
+          <item>
+            <label>Family demands</label>
+            <value>family_demands</value>
+          </item>
+          <item>
+            <label>OTHER</label>
+            <value>other</value>
+          </item>
+        </select>
+        <input appearance="textarea" ref="/bench3/staffing/absenteeism_group/absenteeism_reasons_other_BT">
+          <label>F3.4 If other, please specify.</label>
+        </input>
+      </group>
+    </group>
+    <input appearance="page-break" ref="/bench3/check12">
+      <label>.</label>
+    </input>
+    <group ref="/bench3/services">
+      <label>G) Quality of Services</label>
+      <input ref="/bench3/services/num_itn_lasttwoyears">
+        <label>G1.1 How many LLINs were distributed in the last 12 months?</label>
+        <hint>LLIN: Long Lasting Insecticide-treated Net (bednet to prevent mosquito bites)</hint>
+      </input>
+      <input ref="/bench3/services/coverage_itn">
+        <label>G1.2 What is the level of coverage with LLINs?</label>
+        <hint>Coverage with LLINs: % of nuclear families with at least two LLINs</hint>
+      </input>
+      <input ref="/bench3/services/coverage_measles">
+        <label>G2.1 What was the % coverage of children under 1 who received measles vaccination in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input ref="/bench3/services/coverage_dpt3">
+        <label>G2.2 What was the % coverage of children under 1 who received DPT3 vaccination in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input ref="/bench3/services/num_measles">
+        <label>G2.3 How many measles vaccination campaigns were conducted in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <select1 ref="/bench3/services/funding_vaccines_logistics">
+        <label>G2.4 Does the LGA routinely provide adequate funding in a budget line for immunization campaign logistics?</label>
+        <hint>Adequacy determined by the professional opinion of the respondent panel.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/bench3/services/num_mnch_week">
+        <label>G3.1 How many MNCH week campaigns were conducted in the last 12 months?</label>
+        <hint>MNCH Week Campaigns include Vit A and Deworming distribution.</hint>
+      </input>
+      <input appearance="page-break" ref="/bench3/services/pg32">
+        <label>.</label>
+      </input>
+      <select1 ref="/bench3/services/funding_mnch_week_logistics">
+        <label>G3.2 Does the LGA routinely provide adequate funding in a budget line for MNCH campaign logistics?</label>
+        <hint>Adequacy determined by the professional opinion of the respondent panel.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/bench3/services/num_vita_lastyear">
+        <label>G3.3 How many doses of Vitamin A were distributed in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input ref="/bench3/services/num_doses_deworming">
+        <label>G3.4 How many doses of mebendazole or albendazole were distributed in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <select1 ref="/bench3/services/endemic_schisto">
+        <label>G3.5 Is your LGA endemic for schistosomiasis?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/bench3/services/num_sites_nutsupp">
+        <label>G4.1 How many sites (health facilities and other centers) provide nutritional supplementation for malnourished children?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input ref="/bench3/services/num_sites_inpatient_sam">
+        <label>G4.2 How many health facilities provide inpatient treatment of severe malnutrition?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input ref="/bench3/services/num_nutsuppchildren_lastyear">
+        <label>G4.3 How many children in your LGA received nutritional supplementation in the in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <input appearance="page-break" ref="/bench3/services/pg44">
+        <label>.</label>
+      </input>
+      <input ref="/bench3/services/num_inpatient_sam_lastyear">
+        <label>G4.4 How many children in your LGA received inpatient treatment of severe malnutrition in the in the last 12 months?</label>
+        <hint>If possible, please refer to reports.</hint>
+      </input>
+      <select1 ref="/bench3/services/ifa">
+        <label>G5.1 Do your facilities routinely provide iron and folic acid supplement for all pregnant women?</label>
+        <hint>Provision of iron and folic acid supplementation to pregnant women is National Policy.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/bench3/services/instdelivery_incentives">
+        <label>G5.2 Is your LGA currently offering any incentives for women to deliver at health facilities?</label>
+        <hint>Incentives can be in cash or in kind.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input appearance="textarea" ref="/bench3/services/instdelivery_incentives_describe_BT">
+        <label>G5.3 If yes, please describe.</label>
+        <hint>Confirm response by reading back.</hint>
+      </input>
+      <select ref="/bench3/services/fp_types">
+        <label>G6.1 Which types of family planning services are provided free for women?</label>
+        <hint>Select as many as appropriate.</hint>
+        <item>
+          <label>Condoms</label>
+          <value>condoms</value>
+        </item>
+        <item>
+          <label>Pills</label>
+          <value>pills</value>
+        </item>
+        <item>
+          <label>IUCDs (intra-uterine contraceptive device)</label>
+          <value>iucds</value>
+        </item>
+        <item>
+          <label>Injectables (like Depo, Noresterat, etc.)</label>
+          <value>injectables</value>
+        </item>
+        <item>
+          <label>Implants (like Norplant, Uniplant, etc.)</label>
+          <value>impants</value>
+        </item>
+        <item>
+          <label>Permanent Methods (Tubal Ligation and Vasectomy)</label>
+          <value>permanent</value>
+        </item>
+      </select>
+      <input appearance="page-break" ref="/bench3/services/pffff62">
+        <label>.</label>
+      </input>
+      <select1 ref="/bench3/services/fp_commodities">
+        <label>G6.2 Are you able to access supplies of family planning commodities that are free from national programs?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/bench3/services/fp_logistics">
+        <label>G6.3 Do you have a budget for logistics for providing free FP in the LGA?</label>
+        <hint>Logistics may include: syringes, cotton wool, disinfectants, etc.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/bench3/services/fp_chew_injectable">
+        <label>G6.4 Do CHEWs provide injectable family planning?</label>
+        <hint>It is a new National Policy that CHEWs can provide injectable family planning, which includes Depo Provera and Noresterat.</hint>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/bench3/services/public_awareness">
+        <label>G7.1 Is support for media, public awareness, health messaging, and public health promotion adequately funded, partially funded, or not funded at all?</label>
+        <item>
+          <label>adequately funded</label>
+          <value>adequately_funded</value>
+        </item>
+        <item>
+          <label>partially funded</label>
+          <value>partially_funded</value>
+        </item>
+        <item>
+          <label>not funded at all</label>
+          <value>not_funded</value>
+        </item>
+      </select1>
+      <input ref="/bench3/services/public_awareness_need">
+        <label>G7.2 If not adequately funded, what would be needed?</label>
+        <hint>Confirm response by reading back.</hint>
+      </input>
+      <group ref="/bench3/services/campaign_topics">
+        <input ref="/bench3/services/campaign_topics/campaign_topics_note">
+          <label>G8 Assuming funds available for specific public information campaigns, what are your top four priority areas for public information campaigns that will address the major health challenges of your LGA in the next 12 months?</label>
+        </input>
+        <input ref="/bench3/services/campaign_topics/campaign_topic1">
+          <label>1</label>
+        </input>
+        <input appearance="page-break" ref="/bench3/services/campaign_topics/pf2">
+          <label>.</label>
+        </input>
+        <input ref="/bench3/services/campaign_topics/campaign_topic2">
+          <label>2</label>
+        </input>
+        <input ref="/bench3/services/campaign_topics/campaign_topic3">
+          <label>3</label>
+        </input>
+        <input ref="/bench3/services/campaign_topics/campaign_topic4">
+          <label>4</label>
+        </input>
+      </group>
+    </group>
+    <group ref="/bench3/other_challenges">
+      <label>H) Other Challenges</label>
+      <input appearance="textarea" ref="/bench3/other_challenges/other_issues_BT">
+        <label>H1 What other issues hinder health system performance?</label>
+        <hint>Please write in list form. Based on the professional opinion of the respondent panel. Confirm response by reading back.</hint>
+      </input>
+      <group ref="/bench3/other_challenges/main_challenges">
+        <input ref="/bench3/other_challenges/main_challenges/main_challenges_note">
+          <label>H2 Of all of the issues that we have discussed today, what are the TOP 4 MAIN challenges in your LGA's health system?</label>
+          <hint>List only the top four. Confirm response by reading back.</hint>
+        </input>
+        <input appearance="textarea" ref="/bench3/other_challenges/main_challenges/main_challenges1_BT">
+          <label>1</label>
+        </input>
+        <input appearance="textarea" ref="/bench3/other_challenges/main_challenges/main_challenges2_BT">
+          <label>2</label>
+        </input>
+        <input appearance="textarea" ref="/bench3/other_challenges/main_challenges/main_challenges3_BT">
+          <label>3</label>
+        </input>
+        <input appearance="textarea" ref="/bench3/other_challenges/main_challenges/main_challenges4_BT">
+          <label>4</label>
+        </input>
+      </group>
+    </group>
+  </h:body>
+</h:html>

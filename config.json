@@ -1,0 +1,5 @@
+{
+    "graphite url": "127.0.0.1:2003",
+    "data prefix": "core",
+    "enketo core path": "../enketo-core"
+}

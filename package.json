@@ -1,0 +1,32 @@
+{
+    "name": "enketo-core-performance-monitor",
+    "version": "1.0.0",
+    "description": "app that continuously monitors the loading performance in PhantomJS of a set of benchmark XForms and posts results to a Graphite server",
+    "main": "benchmark",
+    "dependencies": {
+        "commander": "^2.7.1",
+        "enketo-transformer": "^1.0.2",
+        "graphite": "0.0.6",
+        "phantom": "^0.7.2",
+        "q": "^1.2.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enketo/enketo-core-performance-monitor.git"
+    },
+    "keywords": [
+        "enketo",
+        "enketo-core",
+        "performance"
+    ],
+    "author": "Martijn van de Rijdt <martijn@enketo.org> (https://enketo.org)",
+    "license": "Apache2",
+    "bugs": {
+        "url": "https://github.com/enketo/enketo-core-performance-monitor/issues"
+    },
+    "homepage": "https://github.com/enketo/enketo-core-performance-monitor"
+}

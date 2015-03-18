@@ -1,0 +1,216 @@
+#!/usr/bin/env node
+
+var fs = require( 'fs' ),
+    path = require( 'path' ),
+    Q = require( 'q' ),
+    program = require( 'commander' ),
+    transformer = require( 'enketo-transformer' ),
+    phantom = require( 'phantom' ),
+    graphite = require( 'graphite' ),
+    config = require( './config.json' ),
+    client = graphite.createClient( 'plaintext://' + config[ 'graphite url' ] );
+
+program
+    .version( '0.0.1' )
+    .option( '-a, --all', 'benchmark all forms' )
+    .option( '-f, --filename [filename]', 'specific XForm file to benchmark' )
+    .parse( process.argv );
+
+if ( program.all ) {
+    console.log( 'benchmarking all forms' );
+
+    _getFileNames()
+        .then( function( fileNames ) {
+            var funcs = fileNames.map( function( filename ) {
+                return function() {
+                    return _transform( filename )
+                        .then( _writeHtmlFile )
+                        .then( _render )
+                        .then( _send )
+                };
+            } );
+            // run sequentially so they don't influence each other
+            return funcs.reduce( Q.when, Q() )
+                .then( process.exit );
+        } )
+        .catch( _logError )
+        .then( process.exit );
+
+} else if ( program.filename ) {
+    console.log( 'benchmarking %s', program.filename );
+
+    _transform( program.filename )
+        .then( _writeHtmlFile )
+        .then( _render )
+        .then( _send )
+        .catch( _logError )
+        .then( process.exit );
+} else {
+    console.log( 'nothing to do' );
+}
+
+function _getFileNames() {
+    var deferred = Q.defer();
+
+    fs.readdir( 'forms', function( err, filenames ) {
+        if ( err ) {
+            deferred.reject( err );
+        } else {
+            deferred.resolve( filenames.filter( function( filename ) {
+                return filename.lastIndexOf( '.xml' ) === filename.length - 4;
+            } ) );
+        }
+    } );
+
+    return deferred.promise;
+}
+
+function _transform( filename ) {
+    console.log( 'starting transformation of', filename );
+    var start = Date.now();
+    return _getFileContents( filename )
+        .then( transformer.transform )
+        .then( function( result ) {
+            // add filename without extension
+            result.formId = filename.substring( 0, filename.length - 4 );
+            result.transformTime = Date.now() - start;
+            return result;
+        } );
+}
+
+function _getFileContents( filename ) {
+    var deferred = Q.defer(),
+        filePath = path.join( __dirname, './forms', filename );
+
+    fs.readFile( filePath, function( err, xform ) {
+        if ( err ) {
+            deferred.reject( err );
+        } else {
+            deferred.resolve( {
+                xform: xform
+            } );
+        }
+    } );
+
+    return deferred.promise;
+}
+
+function _render( survey ) {
+    var metrics = {},
+        deferred = Q.defer()
+    start = Date.now();
+
+    console.log( 'rendering', survey.formId );
+
+    phantom.create( function( ph ) {
+        ph.createPage( function( page ) {
+
+            page.set( 'viewportSize', {
+                width: 1920,
+                height: 1080
+            } );
+
+            page.onResourceRequested(
+                function( requestData, request ) {
+                    //console.log( 'url requested', requestData.url );
+                    if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
+                        //console.log( 'cancelled request for', requestData.url );
+                        request.abort();
+                    }
+                },
+                function( requestData ) {
+
+                }
+            );
+
+            page.open( path.join( config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ), function( status ) {
+                var end = Date.now();
+
+                // save a screenshot, useful to check if the form actually loaded
+                page.render( 'screenshots/' + survey.formId + '.png', {
+                    format: 'png',
+                    quality: '50'
+                } );
+
+                ph.exit();
+
+                if ( status === 'success' ) {
+                    metrics[ config[ 'data prefix' ] + '.' + survey.formId ] = {
+                        render: end - start,
+                        transform: survey.transformTime
+                    };
+                    deferred.resolve( metrics );
+                } else {
+                    deferred.reject( new Error( 'status: ' + status ) );
+                }
+            } );
+        } );
+    } );
+
+    return deferred.promise;
+}
+
+function _writeHtmlFile( survey ) {
+    var deferred = Q.defer();
+
+    console.log( 'write to static html file', path.join( config[ 'enketo core path' ], '/temp', survey.formId + '.html' ) );
+
+    _getBaseHtml()
+        .then( function( html ) {
+            // clean up model to allow it be a javascript variable
+            survey.model = survey.model.replace( /\n/g, "" ).replace( /\"/g, "'" );
+
+            html = html.replace( /\/\/\s*{{globalModelStr}}/m, 'var globalModelStr = "' + survey.model + '"' );
+            html = html.replace( "<!-- {{<form>}} -->" /*/<!--\s*<form>\s*-->/m*/ , survey.form );
+
+            // write to a temporary html file in the enketo-core folder that has the correct relative resource references
+            fs.writeFile( path.join( config[ 'enketo core path' ], '/temp', survey.formId + '.html' ), html, function( err ) {
+                if ( err ) {
+                    deferred.reject( err );
+                } else {
+                    deferred.resolve( survey );
+                }
+            } );
+        } );
+
+    return deferred.promise;
+}
+
+function _getBaseHtml() {
+    var deferred = Q.defer();
+
+    fs.readFile( path.join( config[ 'enketo core path' ], '/forms/index.html' ), function( err, html ) {
+        if ( err ) {
+            deferred.reject( err );
+        } else {
+            deferred.resolve( html.toString() );
+        }
+    } );
+
+    return deferred.promise;
+}
+
+function _send( metrics ) {
+    var deferred = Q.defer();
+
+    console.log( 'sending data to graphite', metrics );
+
+    client.write( metrics, function( err ) {
+        if ( err ) {
+            deferred.reject( err );
+        } else {
+            console.log( 'sent data successfully!' );
+            console.log( '----------------------------------------------------------------' );
+            deferred.resolve();
+        }
+    } );
+    return deferred.promise;
+}
+
+function _logError( error ) {
+    if ( error.code === 'ENOENT' ) {
+        console.error( 'File ' + program.filename + ' could not be found.' )
+    } else {
+        console.error( 'error occurred', error );
+    }
+}

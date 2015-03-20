@@ -123,11 +123,11 @@ function _render( survey ) {
                 }
             );
 
-            page.open( path.join( config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ), function( status ) {
+            page.open( path.join( __dirname, config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ), function( status ) {
                 var end = Date.now();
 
                 // save a screenshot, useful to check if the form actually loaded
-                page.render( 'screenshots/' + survey.formId + '.png', {
+                page.render( path.join( __dirname, 'screenshots/' + survey.formId + '.png' ), {
                     format: 'png',
                     quality: '50'
                 } );
@@ -153,7 +153,7 @@ function _render( survey ) {
 function _writeHtmlFile( survey ) {
     var deferred = Q.defer();
 
-    console.log( 'write to static html file', path.join( config[ 'enketo core path' ], '/temp', survey.formId + '.html' ) );
+    console.log( 'write to static html file', path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' ) );
 
     _getBaseHtml()
         .then( function( html ) {
@@ -164,7 +164,7 @@ function _writeHtmlFile( survey ) {
             html = html.replace( "<!-- {{<form>}} -->" /*/<!--\s*<form>\s*-->/m*/ , survey.form );
 
             // write to a temporary html file in the enketo-core folder that has the correct relative resource references
-            fs.writeFile( path.join( config[ 'enketo core path' ], '/temp', survey.formId + '.html' ), html, function( err ) {
+            fs.writeFile( path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' ), html, function( err ) {
                 if ( err ) {
                     deferred.reject( err );
                 } else {
@@ -179,7 +179,7 @@ function _writeHtmlFile( survey ) {
 function _getBaseHtml() {
     var deferred = Q.defer();
 
-    fs.readFile( path.join( config[ 'enketo core path' ], '/forms/index.html' ), function( err, html ) {
+    fs.readFile( path.join( path.join( __dirname, config[ 'enketo core path' ], '/forms/index.html' ) ), function( err, html ) {
         if ( err ) {
             deferred.reject( err );
         } else {

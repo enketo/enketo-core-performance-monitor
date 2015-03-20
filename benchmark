@@ -52,7 +52,7 @@ if ( program.all ) {
 function _getFileNames() {
     var deferred = Q.defer();
 
-    fs.readdir( 'forms', function( err, filenames ) {
+    fs.readdir( path.join( __dirname, 'forms' ), function( err, filenames ) {
         if ( err ) {
             deferred.reject( err );
         } else {
@@ -112,9 +112,7 @@ function _render( survey ) {
 
             page.onResourceRequested(
                 function( requestData, request ) {
-                    //console.log( 'url requested', requestData.url );
                     if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
-                        //console.log( 'cancelled request for', requestData.url );
                         request.abort();
                     }
                 },

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+"use strict";
+
 var fs = require( 'fs' ),
     path = require( 'path' ),
     Q = require( 'q' ),
@@ -26,7 +28,7 @@ if ( program.all ) {
                     return _transform( filename )
                         .then( _writeHtmlFile )
                         .then( _render )
-                        .then( _send )
+                        .then( _send );
                 };
             } );
             // run sequentially so they don't influence each other
@@ -66,14 +68,15 @@ function _getFileNames() {
 }
 
 function _transform( filename ) {
-    console.log( 'starting transformation of', filename );
+    console.log( 'transforming ' + filename + '...' );
     var start = Date.now();
     return _getFileContents( filename )
         .then( transformer.transform )
         .then( function( result ) {
             // add filename without extension
             result.formId = filename.substring( 0, filename.length - 4 );
-            result.transformTime = Date.now() - start;
+            result.metrics = {};
+            result.metrics.transform = Date.now() - start;
             return result;
         } );
 }
@@ -96,33 +99,26 @@ function _getFileContents( filename ) {
 }
 
 function _render( survey ) {
-    var metrics = {},
-        deferred = Q.defer()
-    start = Date.now();
+    var deferred = Q.defer(),
+        start = Date.now();
 
-    console.log( 'rendering', survey.formId );
+    console.log( 'rendering...' );
 
     phantom.create( function( ph ) {
         ph.createPage( function( page ) {
-
             page.set( 'viewportSize', {
                 width: 1920,
                 height: 1080
             } );
 
-            page.onResourceRequested(
-                function( requestData, request ) {
-                    if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
-                        request.abort();
-                    }
-                },
-                function( requestData ) {
-
+            page.onResourceRequested( function( requestData, request ) {
+                if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
+                    request.abort();
                 }
-            );
+            } );
 
             page.open( path.join( __dirname, config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ), function( status ) {
-                var end = Date.now();
+                survey.metrics.render = Date.now() - start;
 
                 // save a screenshot, useful to check if the form actually loaded
                 page.render( path.join( __dirname, 'screenshots/' + survey.formId + '.png' ), {
@@ -130,20 +126,45 @@ function _render( survey ) {
                     quality: '50'
                 } );
 
-                ph.exit();
-
                 if ( status === 'success' ) {
-                    metrics[ config[ 'data prefix' ] + '.' + survey.formId ] = {
-                        render: end - start,
-                        transform: survey.transformTime
-                    };
-                    deferred.resolve( metrics );
+                    // add additional metrics
+                    _validate( page )
+                        .then( function( validationTime ) {
+                            survey.metrics.validate = validationTime;
+                            deferred.resolve( survey );
+                        } )
+                        .catch( deferred.reject )
+                        .then( ph.exit );
                 } else {
+                    ph.exit();
                     deferred.reject( new Error( 'status: ' + status ) );
                 }
             } );
         } );
     } );
+
+    return deferred.promise;
+}
+
+function _validate( page ) {
+    var deferred = Q.defer();
+
+    console.log( 'validating...' );
+
+    page.evaluate( function() {
+        var time,
+            start = Date.now();
+
+        // alert dialog will be shown when validation is complete
+        window.alert = function() {
+            time = Date.now() - start;
+        };
+
+        // click on validate button
+        $( '#validate-form' ).click();
+
+        return time;
+    }, deferred.resolve );
 
     return deferred.promise;
 }
@@ -188,10 +209,13 @@ function _getBaseHtml() {
     return deferred.promise;
 }
 
-function _send( metrics ) {
-    var deferred = Q.defer();
+function _send( survey ) {
+    var metrics = {},
+        deferred = Q.defer();
 
-    console.log( 'sending data to graphite', metrics );
+    metrics[ [ config[ 'data prefix' ] + '.' + survey.formId ] ] = survey.metrics;
+
+    console.log( 'sending data to graphite...', metrics );
 
     client.write( metrics, function( err ) {
         if ( err ) {
@@ -207,7 +231,7 @@ function _send( metrics ) {
 
 function _logError( error ) {
     if ( error.code === 'ENOENT' ) {
-        console.error( 'File ' + program.filename + ' could not be found.' )
+        console.error( 'File ' + program.filename + ' could not be found.' );
     } else {
         console.error( 'error occurred', error );
     }

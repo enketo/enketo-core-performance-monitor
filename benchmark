@@ -151,18 +151,13 @@ function _validate( page ) {
 
     console.log( 'validating...' );
 
-    page.set( 'onConsoleMessage', function( msg ) {
-        console.log( msg );
-    } );
-
     page.evaluate( function() {
         var time,
             start = Date.now();
 
         // alert dialog will be shown when validation is complete
-        window.alert = function( msg ) {
+        window.alert = function() {
             time = Date.now() - start;
-            console.log( 'validation messsage: ' + msg );
         };
 
         // click on validate button

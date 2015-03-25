@@ -19,7 +19,7 @@ program
     .parse( process.argv );
 
 if ( program.all ) {
-    console.log( 'benchmarking all forms' );
+    console.log( '================================================================\nbenchmarking all forms\n================================================================' );
 
     _getFileNames()
         .then( function( fileNames ) {
@@ -39,7 +39,7 @@ if ( program.all ) {
         .then( process.exit );
 
 } else if ( program.filename ) {
-    console.log( 'benchmarking %s', program.filename );
+    console.log( '================================================================\nbenchmarking %s\n================================================================', program.filename );
 
     _transform( program.filename )
         .then( _writeHtmlFile )
@@ -170,9 +170,10 @@ function _validate( page ) {
 }
 
 function _writeHtmlFile( survey ) {
-    var deferred = Q.defer();
+    var deferred = Q.defer(),
+        filePath = path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' );
 
-    console.log( 'write to static html file', path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' ) );
+    console.log( 'write to static html file', filePath );
 
     _getBaseHtml()
         .then( function( html ) {
@@ -183,7 +184,7 @@ function _writeHtmlFile( survey ) {
             html = html.replace( "<!-- {{<form>}} -->" /*/<!--\s*<form>\s*-->/m*/ , survey.form );
 
             // write to a temporary html file in the enketo-core folder that has the correct relative resource references
-            fs.writeFile( path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' ), html, function( err ) {
+            fs.writeFile( filePath, html, function( err ) {
                 if ( err ) {
                     deferred.reject( err );
                 } else {
@@ -221,8 +222,7 @@ function _send( survey ) {
         if ( err ) {
             deferred.reject( err );
         } else {
-            console.log( 'sent data successfully!' );
-            console.log( '----------------------------------------------------------------' );
+            console.log( 'sent data successfully!\n----------------------------------------------------------------' );
             deferred.resolve();
         }
     } );

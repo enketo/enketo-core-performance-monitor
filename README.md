@@ -12,9 +12,10 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 4. create empty `temp` folder in enketo-core
 6. git clone this app as a sibling of enketo-core and run 'npm install'
 7. configure in [config.json](./config.json)
-8. test by running `/path/to/benchmark -f bench2.xml`
-9. setup cron job for `/path/to/benchmark -a`
+8. test by running `/path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`
+9. setup cron job for `/path/to/enketo-core-performance-monitor/benchmark -a`
 10. set up [post-commit hook](https://gist.github.com/MartijnR/38621b556356111e87a2) - run with pm2 or forever - to always keep enketo-core up-to-date and rebuild using a [shell script](https://gist.github.com/MartijnR/716fd51f2c57adb91995).
+11. drop any additional forms you would to include in [/forms](./forms).
 
 
 ## Live Results

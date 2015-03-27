@@ -131,6 +131,7 @@ function _render( survey ) {
                     _validate( page )
                         .then( function( validationTime ) {
                             survey.metrics.validate = validationTime;
+                            ph.exit();
                             deferred.resolve( survey );
                         } )
                         .catch( deferred.reject )
@@ -222,8 +223,8 @@ function _send( survey ) {
         if ( err ) {
             deferred.reject( err );
         } else {
-            console.log( 'sent data successfully!\n----------------------------------------------------------------' );
-            deferred.resolve();
+    console.log( 'sent data successfully!\n----------------------------------------------------------------' );
+    deferred.resolve();
         }
     } );
     return deferred.promise;
@@ -231,7 +232,7 @@ function _send( survey ) {
 
 function _logError( error ) {
     if ( error.code === 'ENOENT' ) {
-        console.error( 'File ' + program.filename + ' could not be found.' );
+        console.error( program.filename + ' could not be found' );
     } else {
         console.error( 'error occurred', error );
     }

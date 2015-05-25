@@ -13,6 +13,10 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 
 <img src="http://performance.enketo.org/render?from=-3months&until=now&width=600&height=750&_salt=1427812702.648&hideLegend=false&title=Enketo%20Core%20Validation%20Performance%202&vtitle=milliseconds&target=core.bench9.validate&target=core.bench10.validate&target=core.drc.validate&_uniq=0.6410806442145258" />
 
+Notes:
+
+* For all 4 graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated.
+
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)

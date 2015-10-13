@@ -162,7 +162,7 @@ function _validate( page ) {
         };
 
         // click on validate button
-        $( '#validate-form' ).click();
+        document.getElementById( 'validate-form' ).click();
 
         return time;
     }, deferred.resolve );

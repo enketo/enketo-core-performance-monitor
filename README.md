@@ -20,9 +20,9 @@ Notes:
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)
-2. Install phantomjs, node (v0.10), bower, and grunt-cli
+2. Install phantomjs, node (v0.10), and grunt-cli
 3. Install build-essential `apt-get install build-essential`
-3. git clone enketo-core incl git submodules and build with `npm install && bower install && grunt`
+3. git clone enketo-core incl git submodules and build with `npm install && grunt`
 4. create empty `temp` folder in enketo-core
 6. git clone this app as a sibling of enketo-core and run 'npm install'
 7. configure in [config.json](./config.json)

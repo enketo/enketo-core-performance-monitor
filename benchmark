@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 
-"use strict";
+'use strict';
 
-var fs = require( 'fs' ),
-    path = require( 'path' ),
-    Q = require( 'q' ),
-    program = require( 'commander' ),
-    transformer = require( 'enketo-transformer' ),
-    phantom = require( 'phantom' ),
-    graphite = require( 'graphite' ),
-    config = require( './config.json' ),
-    client = graphite.createClient( 'plaintext://' + config[ 'graphite url' ] );
+var fs = require( 'fs' );
+var path = require( 'path' );
+var Promise = require( 'lie' );
+var Q = require( 'q' );
+var program = require( 'commander' );
+var transformer = require( 'enketo-transformer' );
+var phantom = require( 'phantom' );
+var graphite = require( 'graphite' );
+var config = require( './config.json' );
+var client = graphite.createClient( 'plaintext://' + config[ 'graphite url' ] );
 
 program
     .version( '0.0.1' )
@@ -148,26 +149,45 @@ function _render( survey ) {
 }
 
 function _validate( page ) {
-    var deferred = Q.defer();
+    var TIMEOUT = 60 * 1000;
+    var start = Date.now();
 
     console.log( 'validating...' );
 
-    page.evaluate( function() {
-        var time,
-            start = Date.now();
+    // trigger validation and store validation duration in DOM
+    page.evaluate( function() {  
+        var start = Date.now();
+        var formEl = document.querySelector( 'form.or' );
 
-        // alert dialog will be shown when validation is complete
-        window.alert = function() {
-            time = Date.now() - start;
+        // use a dirty little trick by detecting the alert shown upon completion
+        window.alert = function(){
+            formEl.dataset.validationTime = Date.now() - start;
         };
 
-        // click on validate button
+        // start validation
         document.getElementById( 'validate-form' ).click();
+    });
 
-        return time;
-    }, deferred.resolve );
-
-    return deferred.promise;
+    return new Promise( function( resolve, reject ){
+        var busy = false;
+        // make synchronous, because page.evaluate returns right away.
+        var check = setInterval( function(){
+            if ( !busy ){
+                // for some reason, this function sometimes takes very long to 
+                // complete (e.g. in shop.xml)
+                busy = true;
+                page.evaluate( function(){
+                    return document.querySelector( 'form.or' ).dataset.validationTime;
+                }, function( validationTime ){
+                    if ( validationTime || ( Date.now() - start ) > TIMEOUT ) {
+                        clearInterval( check );
+                        resolve( validationTime );
+                    }
+                    busy = false;
+                });
+            }
+        }, 3 * 1000 );
+    });
 }
 
 function _writeHtmlFile( survey ) {

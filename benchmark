@@ -5,6 +5,7 @@
 var fs = require( 'fs' );
 var path = require( 'path' );
 var Promise = require( 'lie' );
+var Q = require('q');
 var program = require( 'commander' );
 var transformer = require( 'enketo-transformer' );
 var phantom = require( 'phantom' );

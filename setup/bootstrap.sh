@@ -12,20 +12,17 @@ apt-get install -y build-essential chrpath libssl-dev libxft-dev
 apt-get install -y libfreetype6 libfreetype6-dev
 apt-get install -y libfontconfig1 libfontconfig1-dev
 cd ~
-export PHANTOM_JS="phantomjs-1.9.8-linux-x86_64"
-wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
-tar xvjf $PHANTOM_JS.tar.bz2
-mv $PHANTOM_JS /usr/local/share
-ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
+
+# node
+curl -sL https://deb.nodesource.com/setup_0.10 | sudo bash -
+apt-get install -y nodejs
+
+# phantomjs
+npm install -g phantomjs
 
 #check
 echo "**** PhantomJS installation check: ****"
 phantomjs --version
-
-# node
-
-curl -sL https://deb.nodesource.com/setup_0.10 | sudo bash -
-apt-get install -y nodejs
 
 npm -g install grunt-cli
 # remove node_modules if exists because npm builds can be system-specific

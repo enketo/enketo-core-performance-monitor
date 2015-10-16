@@ -8,8 +8,7 @@
         "enketo-transformer": "1.6.0",
         "graphite": "0.0.6",
         "lie": "3.0.x",
-        "phantom": "^0.7.2",
-        "q": "^1.4.1"
+        "phantom": "^0.7.2"
     },
     "devDependencies": {},
     "scripts": {

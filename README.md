@@ -15,7 +15,8 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 
 Notes:
 
-* For all 4 graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated.
+* For all graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated.
+* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the server.
 
 ## Setup
 

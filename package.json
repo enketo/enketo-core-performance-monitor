@@ -1,11 +1,11 @@
 {
     "name": "enketo-core-performance-monitor",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "app that continuously monitors the loading performance in PhantomJS of a set of benchmark XForms and posts results to a Graphite server",
     "main": "benchmark",
     "dependencies": {
         "commander": "2.9.x",
-        "enketo-transformer": "1.6.0",
+        "enketo-transformer": "1.7.3",
         "graphite": "0.0.6",
         "lie": "3.0.x",
         "phantom": "^0.7.2"

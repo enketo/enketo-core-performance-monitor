@@ -5,7 +5,7 @@
     "main": "benchmark",
     "dependencies": {
         "commander": "2.9.x",
-        "enketo-transformer": "1.7.3",
+        "enketo-transformer": "1.8.x",
         "graphite": "0.0.6",
         "lie": "3.0.x",
         "phantom": "^0.7.2"

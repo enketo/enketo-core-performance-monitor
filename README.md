@@ -15,15 +15,17 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 
 Notes:
 
-* For all graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated.
-* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the server.
+* For all graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated. The results are useless in this period.
+* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the 
+server. The results are useless in this period.
+* For all graphs: Between 01/13/2016 and 07/26/2016 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
 
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)
-2. Install phantomjs, node (v0.10), and grunt-cli
+2. Install node (v4.x), and grunt-cli
 3. Install build-essential `apt-get install build-essential`
-3. git clone enketo-core incl git submodules and build with `npm install && grunt`
+3. git clone enketo-core and build with `npm install && grunt`
 4. create empty `temp` folder in enketo-core
 6. git clone this app as a sibling of enketo-core and run 'npm install'
 7. configure in [config.json](./config.json)

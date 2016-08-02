@@ -4,14 +4,13 @@
 
 var fs = require( 'fs' );
 var path = require( 'path' );
-var Promise = require( 'lie' );
 var program = require( 'commander' );
 var transformer = require( 'enketo-transformer' );
 var phantom = require( 'phantom' );
 var graphite = require( 'graphite' );
 var config = require( './config.json' );
 var client = graphite.createClient( 'plaintext://' + config[ 'graphite url' ] );
-var pkg = require('./package.json');
+var pkg = require( './package.json' );
 
 program
     .version( pkg.version )
@@ -33,9 +32,9 @@ if ( program.all ) {
                 };
             } );
             // run sequentially so they don't influence each other
-            return funcs.reduce( function(p, fn){ 
-                return p.then(fn)
-            }, Promise.resolve() )
+            return funcs.reduce( function( p, fn ) {
+                    return p.then( fn )
+                }, Promise.resolve() )
                 .then( process.exit );
         } )
         .catch( _logError )
@@ -103,47 +102,50 @@ function _render( survey ) {
 
     console.log( 'rendering...' );
 
-    return new Promise( function( resolve, reject ) {
-        phantom.create( function( ph ) {
-            ph.createPage( function( page ) {
-                page.set( 'viewportSize', {
-                    width: 1920,
-                    height: 1080
-                } );
 
-                page.onResourceRequested( function( requestData, request ) {
-                    if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
-                        request.abort();
-                    }
-                } );
-
-                page.open( path.join( __dirname, config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ), function( status ) {
-                    survey.metrics.render = Date.now() - start;
-
-                    // save a screenshot, useful to check if the form actually loaded
-                    page.render( path.join( __dirname, 'screenshots/' + survey.formId + '.png' ), {
-                        format: 'png',
-                        quality: '50'
+    return phantom.create()
+        .then( function( ph ) {
+            return ph.createPage()
+                .then( function( page ) {
+                    page.property( 'viewportSize', {
+                        width: 1920,
+                        height: 1080
                     } );
 
-                    if ( status === 'success' ) {
-                        // add additional metrics
-                        _validate( page )
-                            .then( function( validationTime ) {
-                                survey.metrics.validate = validationTime;
+                    page.on( 'onResourceRequested', true, function( requestData, request ) {
+                        if ( /(https?:\/\/)|(livereload\.js)/.test( requestData.url ) ) {
+                            request.abort();
+                        }
+                    } );
+
+                    return page.open( path.join( __dirname, config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ) )
+                        .then( function( status ) {
+                            survey.metrics.render = Date.now() - start;
+
+                            // save a screenshot, useful to check if the form actually loaded
+                            page.render( path.join( __dirname, 'screenshots/' + survey.formId + '.png' ), {
+                                format: 'png',
+                                quality: '50'
+                            } );
+
+                            if ( status === 'success' ) {
+                                // add additional metrics
+                                return _validate( page )
+                                    .then( function( validationTime ) {
+                                        survey.metrics.validate = validationTime;
+                                        ph.exit();
+                                        return survey;
+                                    } )
+                                    .catch( function( e ) {
+                                        ph.exit();
+                                    } );
+                            } else {
                                 ph.exit();
-                                resolve( survey );
-                            } )
-                            .catch( reject )
-                            .then( ph.exit );
-                    } else {
-                        ph.exit();
-                        reject( new Error( 'status: ' + status ) );
-                    }
+                                throw new Error( 'status: ' + status );
+                            }
+                        } );
                 } );
-            } );
         } );
-    } );
 }
 
 function _validate( page ) {
@@ -175,14 +177,15 @@ function _validate( page ) {
                 // complete (e.g. in shop.xml)
                 busy = true;
                 page.evaluate( function() {
-                    return document.querySelector( 'form.or' ).dataset.validationTime;
-                }, function( validationTime ) {
-                    if ( validationTime || ( Date.now() - start ) > TIMEOUT ) {
-                        clearInterval( check );
-                        resolve( validationTime );
-                    }
-                    busy = false;
-                } );
+                        return document.querySelector( 'form.or' ).dataset.validationTime;
+                    } )
+                    .then( function( validationTime ) {
+                        if ( validationTime || ( Date.now() - start ) > TIMEOUT ) {
+                            clearInterval( check );
+                            resolve( validationTime );
+                        }
+                        busy = false;
+                    } );
             }
         }, 3 * 1000 );
     } );

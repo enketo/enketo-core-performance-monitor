@@ -26,7 +26,6 @@ server. The results are useless in this period.
 2. Install node (v4.x), and grunt-cli
 3. Install build-essential `apt-get install build-essential`
 3. git clone enketo-core and build with `npm install && grunt`
-4. create empty `temp` folder in enketo-core
 6. git clone this app as a sibling of enketo-core and run 'npm install'
 7. configure in [config.json](./config.json)
 8. test by running `/path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`

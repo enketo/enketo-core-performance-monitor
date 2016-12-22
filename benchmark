@@ -118,7 +118,7 @@ function _render( survey ) {
                         }
                     } );
 
-                    return page.open( path.join( __dirname, config[ 'enketo core path' ], '/temp/', survey.formId + '.html' ) )
+                    return page.open( path.join( __dirname, config[ 'enketo core path' ], '/build/', survey.formId + '.html' ) )
                         .then( function( status ) {
                             survey.metrics.render = Date.now() - start;
 
@@ -192,7 +192,7 @@ function _validate( page ) {
 }
 
 function _writeHtmlFile( survey ) {
-    var filePath = path.join( __dirname, config[ 'enketo core path' ], '/temp', survey.formId + '.html' );
+    var filePath = path.join( __dirname, config[ 'enketo core path' ], '/build', survey.formId + '.html' );
 
     console.log( 'write to static html file', filePath );
 
@@ -220,7 +220,7 @@ function _writeHtmlFile( survey ) {
 function _getBaseHtml() {
 
     return new Promise( function( resolve, reject ) {
-        fs.readFile( path.join( path.join( __dirname, config[ 'enketo core path' ], '/forms/index.html' ) ), function( err, html ) {
+        fs.readFile( path.join( path.join( __dirname, config[ 'enketo core path' ], '/build/index.html' ) ), function( err, html ) {
             if ( err ) {
                 reject( err );
             } else {

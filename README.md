@@ -3,6 +3,10 @@ Enketo Core Performance Monitor
 
 An app that continuously monitors Enketo Core's loading performance in PhantomJS for a set of benchmark XForms. It posts results to a Graphite server.
 
+The app runs forms in Chrome Headless. We'll also try to update this browser regularly, so performance changes could be caused by Chrome updates or Enketo Core updates. This reflects the user experience well which is what really matters. 
+
+Unfortunately the server running this app is not always constant. In the past Digital Ocean has throttled this server.
+
 ## Live Results
 
 <img src="http://performance.enketo.org/render?from=-3months&until=now&width=600&height=750&_salt=1427818287.236&hideLegend=false&title=Enketo%20Core%20Render%20Performance%201&vtitle=milliseconds&target=core.widgets.render&target=core.ukraine.render&target=core.uganda.render&target=core.turkey.render&target=core.shop.render&target=core.haiti.render&target=core.iraq.render&target=core.drc.render&target=core.car.render&target=core.burundi.render&target=core.bench9.render&target=core.bench8.render&target=core.bench7.render&target=core.bench3.render&target=core.bench2.render&target=core.bench11.render&_uniq=0.3582709750626236" />
@@ -15,10 +19,8 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 
 Notes:
 
-* For all graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated. The results are useless in this period.
-* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the server. 
-* For all graphs: Between 01/13/2016 and 07/26/2016 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
 * For all graphs between 22/02/2018 and 08/07/2018 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
+* From the 7th of August 2018 onwards the app switched to Chrome headless. Best to discard data from before this date.
 
 ## Setup
 

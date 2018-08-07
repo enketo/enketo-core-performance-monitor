@@ -25,13 +25,13 @@ Notes:
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)
-2. Install node (v4.x), and grunt-cli
+2. Install node 8.x, and grunt-cli
 3. Install build-essential `apt-get install build-essential`
 4. git clone enketo-core and build with `npm install && grunt`
 5. git clone this app as a sibling of enketo-core and run 'npm install'
 6. configure in [config.json](./config.json)
-7. test by running `/path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`
-8. setup cron job for `/path/to/enketo-core-performance-monitor/benchmark -a` every **hour** with the above retention. cronjob frequency = smallest retention frequency
+7. test by running `node /path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`
+8. setup cron job for `node /path/to/enketo-core-performance-monitor/benchmark -a` every **hour** with the above retention. cronjob frequency = smallest retention frequency
 9.  set up [post-commit hook](https://gist.github.com/MartijnR/38621b556356111e87a2) - run with pm2 or forever - to always keep enketo-core up-to-date and rebuild using a [shell script](https://gist.github.com/MartijnR/716fd51f2c57adb91995).
 10. drop any additional forms you would to include in [/forms](./forms).
 

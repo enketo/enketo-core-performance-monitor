@@ -188,7 +188,7 @@ function _send( survey ) {
             }
         } );
     } );
-    return Promise.resolve();
+    //return Promise.resolve();
 }
 
 function _logError( error ) {

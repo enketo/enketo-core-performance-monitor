@@ -24,7 +24,9 @@ if ( program.all ) {
             const funcs = fileNames.map( filename => () => _transform( filename )
                 .then( _writeHtmlFile )
                 .then( _render )
-                .then( _send ) );
+                .then( _send )
+                .catch( e => console.error( e ) )
+            );
             // run sequentially so they don't influence each other
             return funcs.reduce( ( p, fn ) => p.then( fn ), Promise.resolve() )
                 .then( process.exit );
@@ -98,6 +100,16 @@ async function _render( survey ) {
         throw error;
     }
     const page = await browser.newPage();
+
+    // intercept any resources requested by the page and assume they are for external data so just return XML
+    await page.setRequestInterception( true );
+    page.on( 'request', interceptedRequest => {
+        if ( interceptedRequest.url().startsWith( 'jr:' ) ) {
+            interceptedRequest.abort();
+        } else {
+            interceptedRequest.continue();
+        }
+    } );
 
     // render performance
     const renderStart = Date.now();

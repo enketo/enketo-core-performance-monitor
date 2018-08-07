@@ -178,7 +178,7 @@ function _send( survey ) {
 
     console.log( 'sending data to graphite...', metrics );
 
-    /*return new Promise( function( resolve, reject ) {
+    return new Promise( function( resolve, reject ) {
         client.write( metrics, function( err ) {
             if ( err ) {
                 reject( err );
@@ -187,7 +187,7 @@ function _send( survey ) {
                 resolve();
             }
         } );
-    } );*/
+    } );
     return Promise.resolve();
 }
 

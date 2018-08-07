@@ -16,22 +16,22 @@ An app that continuously monitors Enketo Core's loading performance in PhantomJS
 Notes:
 
 * For all graphs: Between 05/04/2015 and 05/25/2015 `npm update` failed which meant the javascript built file was not updated. The results are useless in this period.
-* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the 
-server. The results are useless in this period.
+* For all graphs: Between 09/27/2015 and 10/20/2015 the data is useless, because DigitalOcean decided to quietly throttle the server. 
 * For all graphs: Between 01/13/2016 and 07/26/2016 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
+* For all graphs between 22/02/2018 and 08/07/2018 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
 
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)
 2. Install node (v4.x), and grunt-cli
 3. Install build-essential `apt-get install build-essential`
-3. git clone enketo-core and build with `npm install && grunt`
-6. git clone this app as a sibling of enketo-core and run 'npm install'
-7. configure in [config.json](./config.json)
-8. test by running `/path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`
-9. setup cron job for `/path/to/enketo-core-performance-monitor/benchmark -a` every **hour** with the above retention. cronjob frequency = smallest retention frequency
-10. set up [post-commit hook](https://gist.github.com/MartijnR/38621b556356111e87a2) - run with pm2 or forever - to always keep enketo-core up-to-date and rebuild using a [shell script](https://gist.github.com/MartijnR/716fd51f2c57adb91995).
-11. drop any additional forms you would to include in [/forms](./forms).
+4. git clone enketo-core and build with `npm install && grunt`
+5. git clone this app as a sibling of enketo-core and run 'npm install'
+6. configure in [config.json](./config.json)
+7. test by running `/path/to/enketo-core-performance-monitor/benchmark -f widgets.xml`
+8. setup cron job for `/path/to/enketo-core-performance-monitor/benchmark -a` every **hour** with the above retention. cronjob frequency = smallest retention frequency
+9.  set up [post-commit hook](https://gist.github.com/MartijnR/38621b556356111e87a2) - run with pm2 or forever - to always keep enketo-core up-to-date and rebuild using a [shell script](https://gist.github.com/MartijnR/716fd51f2c57adb91995).
+10. drop any additional forms you would to include in [/forms](./forms).
 
 
 

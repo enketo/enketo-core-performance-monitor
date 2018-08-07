@@ -1,0 +1,188 @@
+#!/usr/bin/env node
+
+const fs = require( 'fs' );
+const path = require( 'path' );
+const program = require( 'commander' );
+const transformer = require( '../enketo-core/node_modules/enketo-transformer' );
+const puppeteer = require( 'puppeteer' );
+const graphite = require( 'graphite' );
+const config = require( './config.json' );
+const client = graphite.createClient( `plaintext://${config[ 'graphite url' ]}` );
+const pkg = require( './package.json' );
+
+program
+    .version( pkg.version )
+    .option( '-a, --all', 'benchmark all forms' )
+    .option( '-f, --filename [filename]', 'specific XForm file to benchmark' )
+    .parse( process.argv );
+
+if ( program.all ) {
+    console.log( '================================================================\nbenchmarking all forms\n================================================================' );
+
+    _getFileNames()
+        .then( fileNames => {
+            const funcs = fileNames.map( filename => () => _transform( filename )
+                .then( _writeHtmlFile )
+                .then( _render )
+                .then( _send ) );
+            // run sequentially so they don't influence each other
+            return funcs.reduce( ( p, fn ) => p.then( fn ), Promise.resolve() )
+                .then( process.exit );
+        } )
+        .catch( _logError )
+        .then( process.exit );
+
+} else if ( program.filename ) {
+    console.log( '================================================================\nbenchmarking %s\n================================================================', program.filename );
+
+    _transform( program.filename )
+        .then( _writeHtmlFile )
+        .then( _render )
+        .then( _send )
+        .catch( _logError )
+        .then( process.exit );
+} else {
+    console.log( 'nothing to do' );
+}
+
+function _getFileNames() {
+    return new Promise( ( resolve, reject ) => {
+        fs.readdir( path.join( __dirname, 'forms' ), ( err, filenames ) => {
+            if ( err ) {
+                reject( err );
+            } else {
+                resolve( filenames.filter( filename => filename.lastIndexOf( '.xml' ) === filename.length - 4 ) );
+            }
+        } );
+    } );
+}
+
+function _transform( filename ) {
+    console.log( `transforming ${filename}...` );
+    const start = Date.now();
+    return _getFileContents( filename )
+        .then( transformer.transform )
+        .then( result => {
+            // add filename without extension
+            result.formId = filename.substring( 0, filename.length - 4 );
+            result.metrics = {};
+            result.metrics.transform = Date.now() - start;
+            return result;
+        } );
+}
+
+function _getFileContents( filename ) {
+    const filePath = path.join( __dirname, './forms', filename );
+
+    return new Promise( ( resolve, reject ) => {
+        fs.readFile( filePath, ( err, xform ) => {
+            if ( err ) {
+                reject( err );
+            } else {
+                resolve( {
+                    xform
+                } );
+            }
+        } );
+    } );
+}
+
+async function _render( survey ) {
+
+    console.log( 'rendering...' );
+
+    const browser = await puppeteer.launch();
+    const closeBrowser = error => {
+        browser.close();
+        console.log( 'error occurred, closed browser' );
+        throw error;
+    }
+    const page = await browser.newPage();
+
+    // render performance
+    const renderStart = Date.now();
+    const url = `file:${path.join( __dirname, config[ 'enketo core path' ], '/build/', survey.formId+'.html')}`;
+    await page.goto( url ).catch( closeBrowser );
+    survey.metrics.render = Date.now() - renderStart;
+
+    // save a screenshot, useful to check if the form actually loaded
+    const screenshotPath = path.join( __dirname, `screenshots/${survey.formId}.png` );
+    await page.screenshot( { path: screenshotPath } ).catch( closeBrowser );
+
+    // validation performance
+    const validationStart = Date.now()
+    await page.evaluate( () => window.form.validateAll() );
+    survey.metrics.validate = Date.now() - validationStart;
+
+    await browser.close();
+
+    return survey;
+}
+
+
+function _writeHtmlFile( survey ) {
+    const filePath = path.join( __dirname, config[ 'enketo core path' ], '/build', `${survey.formId}.html` );
+
+    console.log( 'write to static html file', filePath );
+
+    return new Promise( ( resolve, reject ) => {
+        _getBaseHtml()
+            .then( html => {
+                // clean up model to allow it be a javascript variable
+                survey.model = survey.model.replace( /\n/g, "" ).replace( /\"/g, "'" );
+
+                html = html.replace( /\/\/\s*{{globalModelStr}}/m, `var globalModelStr = "${survey.model}"` );
+                html = html.replace( "<!-- {{<form>}} -->" /*/<!--\s*<form>\s*-->/m*/ , survey.form );
+
+                // write to a temporary html file in the enketo-core folder that has the correct relative resource references
+                fs.writeFile( filePath, html, err => {
+                    if ( err ) {
+                        reject( err );
+                    } else {
+                        resolve( survey );
+                    }
+                } );
+            } );
+    } );
+}
+
+function _getBaseHtml() {
+
+    return new Promise( ( resolve, reject ) => {
+        fs.readFile( path.join( path.join( __dirname, config[ 'enketo core path' ], '/build/index.html' ) ), ( err, html ) => {
+            if ( err ) {
+                reject( err );
+            } else {
+                resolve( html.toString() );
+            }
+        } );
+    } );
+}
+
+function _send( survey ) {
+    const metrics = {};
+
+    metrics[ [ `${config[ 'data prefix' ]}.${survey.formId}` ] ] = survey.metrics;
+
+    console.log( 'sending data to graphite...', metrics );
+
+    /*return new Promise( function( resolve, reject ) {
+        client.write( metrics, function( err ) {
+            if ( err ) {
+                reject( err );
+            } else {
+                console.log( 'sent data successfully!\n----------------------------------------------------------------' );
+                resolve();
+            }
+        } );
+    } );*/
+    return Promise.resolve();
+}
+
+function _logError( error ) {
+    if ( error.code === 'ENOENT' ) {
+        console.error( `${program.filename} could not be found` );
+    } else {
+        console.error( 'error occurred', error );
+    }
+}

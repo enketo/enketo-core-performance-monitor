@@ -1,7 +1,7 @@
 Enketo Core Performance Monitor
 ===========
 
-An app that continuously monitors Enketo Core's loading performance in PhantomJS for a set of benchmark XForms. It posts results to a Graphite server.
+An app that continuously monitors Enketo Core's loading performance in Chrome for a set of benchmark XForms. It posts results to a Graphite server.
 
 The app runs forms in Chrome Headless. We'll also try to update this browser regularly, so performance changes could be caused by Chrome updates or Enketo Core updates. This reflects the user experience well which is what really matters. 
 

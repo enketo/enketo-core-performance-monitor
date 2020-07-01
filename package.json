@@ -4,9 +4,9 @@
     "description": "app that continuously monitors the loading performance in PhantomJS of a set of benchmark XForms and posts results to a Graphite server",
     "main": "benchmark",
     "dependencies": {
-        "commander": "^4.0.1",
+        "commander": "^5.1.0",
         "graphite": "^0.1.4",
-        "puppeteer": "^2.0.0"
+        "puppeteer": "^4.0.1"
     },
     "devDependencies": {},
     "scripts": {

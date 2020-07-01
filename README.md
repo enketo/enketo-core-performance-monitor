@@ -21,6 +21,7 @@ Notes:
 
 * For all graphs between 22/02/2018 and 08/07/2018 `grunt` failed which meant the javascript built file was not updated. The results are useless in this period.
 * From the 7th of August 2018 onwards the app switched to Chrome headless. Best to discard data from before this date.
+* From enketo-core 4.56.0 (Aug 7, 2018) and 5.16.2 enketo-core failed to update. This was resolved on July 1st 2020. The data is useless in this period.
 
 ## Setup
 

@@ -16,7 +16,9 @@ program
     .option( '-f, --filename [filename]', 'specific XForm file to benchmark' )
     .parse( process.argv );
 
-if ( program.all ) {
+const options = program.opts();
+
+if ( options.all ) {
     console.log( '================================================================\nbenchmarking all forms\n================================================================' );
 
     _getFileNames()
@@ -34,10 +36,10 @@ if ( program.all ) {
         .catch( _logError )
         .then( process.exit );
 
-} else if ( program.filename ) {
+} else if ( options.filename ) {
     console.log( '================================================================\nbenchmarking %s\n================================================================', program.filename );
 
-    _transform( program.filename )
+    _transform( options.filename )
         .then( _writeHtmlFile )
         .then( _render )
         .then( _send )
@@ -193,7 +195,7 @@ function _send( survey ) {
 
 function _logError( error ) {
     if ( error.code === 'ENOENT' ) {
-        console.error( `${program.filename} could not be found` );
+        console.error( `${options.filename} could not be found` );
     } else {
         console.error( 'error occurred', error );
     }

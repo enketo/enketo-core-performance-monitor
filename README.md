@@ -26,7 +26,7 @@ Notes:
 ## Setup
 
 1. Install graphite server and configure (after many failures I finally settled on these retentions with the default average aggregation: 1h:1d,1d:5y,7d:10y)
-2. Install node 12.x, and grunt-cli
+2. Install node 14, and grunt-cli
 3. Install build-essential `apt-get install build-essential`
 4. git clone enketo-core and build with `npm install && grunt`
 5. git clone this app as a sibling of enketo-core and run 'npm install'

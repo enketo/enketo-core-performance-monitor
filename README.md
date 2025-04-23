@@ -3,21 +3,21 @@ Enketo Core Performance Monitor
 
 An app that continuously monitors Enketo Core's loading performance in Chrome for a set of benchmark XForms. It posts results to a Graphite server.
 
-The app runs forms in Chrome Headless. We'll also try to update this browser regularly, so performance changes could be caused by Chrome updates or Enketo Core updates. This reflects the user experience well which is what really matters. 
+The app runs forms in Chrome Headless. We'll also try to update this browser regularly, so performance changes could be caused by Chrome updates or Enketo Core updates. This reflects the user experience well which is what really matters.
 
 Unfortunately the server running this app is not always constant. In the past Digital Ocean has throttled this server.
 
 ## Live Results
 
-<img src="http://perf.enketo.getodk.org/render?from=-3months&until=now&width=600&height=750&_salt=1427818287.236&hideLegend=false&title=Enketo%20Core%20Render%20Performance%201&vtitle=milliseconds&target=core.widgets.render&target=core.ukraine.render&target=core.uganda.render&target=core.turkey.render&target=core.shop.render&target=core.haiti.render&target=core.iraq.render&target=core.drc.render&target=core.car.render&target=core.burundi.render&target=core.bench9.render&target=core.bench8.render&target=core.bench7.render&target=core.bench3.render&target=core.bench2.render&target=core.bench11.render&_uniq=0.3582709750626236" />
+<img src="http://178.62.243.213/render?from=-3months&until=now&width=600&height=750&_salt=1427818287.236&hideLegend=false&title=Enketo%20Core%20Render%20Performance%201&vtitle=milliseconds&target=core.widgets.render&target=core.ukraine.render&target=core.uganda.render&target=core.turkey.render&target=core.shop.render&target=core.haiti.render&target=core.iraq.render&target=core.drc.render&target=core.car.render&target=core.burundi.render&target=core.bench9.render&target=core.bench8.render&target=core.bench7.render&target=core.bench3.render&target=core.bench2.render&target=core.bench11.render&_uniq=0.3582709750626236" />
 
-<img src="http://perf.enketo.getodk.org/render?from=-3months&until=now&width=600&height=750&_salt=1427818490.919&hideLegend=false&title=Enketo%20Core%20Render%20Performance%202&vtitle=milliseconds&target=core.bench1.render&target=core.bench10.render&target=core.bench12.render&target=core.bench4.render&target=core.bench5.render&target=core.bench6.render&target=core.sdiprofile.render&target=core.calc_n_footprint_29.render&_uniq=0.5987276150844991" />
+<img src="http://178.62.243.213/render?from=-3months&until=now&width=600&height=750&_salt=1427818490.919&hideLegend=false&title=Enketo%20Core%20Render%20Performance%202&vtitle=milliseconds&target=core.bench1.render&target=core.bench10.render&target=core.bench12.render&target=core.bench4.render&target=core.bench5.render&target=core.bench6.render&target=core.sdiprofile.render&target=core.calc_n_footprint_29.render&_uniq=0.5987276150844991" />
 
-<img src="http://perf.enketo.getodk.org/render?from=-3months&until=now&width=600&height=750&_salt=1427812570.922&hideLegend=false&title=Enketo%20Core%20Validation%20Performance%201&vtitle=milliseconds&target=core.bench2.validate&target=core.bench3.validate&target=core.bench4.validate&target=core.bench5.validate&target=core.bench7.validate&target=core.bench8.validate&target=core.haiti.validate&target=core.sdiprofile.validate&target=core.widgets.validate&target=core.turkey.validate&_uniq=0.09886326431296766" />
+<img src="http://178.62.243.213/render?from=-3months&until=now&width=600&height=750&_salt=1427812570.922&hideLegend=false&title=Enketo%20Core%20Validation%20Performance%201&vtitle=milliseconds&target=core.bench2.validate&target=core.bench3.validate&target=core.bench4.validate&target=core.bench5.validate&target=core.bench7.validate&target=core.bench8.validate&target=core.haiti.validate&target=core.sdiprofile.validate&target=core.widgets.validate&target=core.turkey.validate&_uniq=0.09886326431296766" />
 
-<img src="http://perf.enketo.getodk.org/render?from=-3months&until=now&width=600&height=750&_salt=1427812702.648&hideLegend=false&title=Enketo%20Core%20Validation%20Performance%202&vtitle=milliseconds&target=core.bench9.validate&target=core.bench10.validate&target=core.drc.validate&_uniq=0.6410806442145258" />
+<img src="http://178.62.243.213/render?from=-3months&until=now&width=600&height=750&_salt=1427812702.648&hideLegend=false&title=Enketo%20Core%20Validation%20Performance%202&vtitle=milliseconds&target=core.bench9.validate&target=core.bench10.validate&target=core.drc.validate&_uniq=0.6410806442145258" />
 
-<img src="http://perf.enketo.getodk.org/render?from=-3months&until=now&width=600&height=750&_salt=1427812702.648&hideLegend=false&title=Enketo%20Core%20Transform%20Performance%202&vtitle=milliseconds&target=core.bench12.transform&target=core.bench6.transform&target=core.burundi.transform&target=core.bench1.transform&target=core.uganda.transform&target=core.bench11.transform&target=core.shop.transform&target=core.widgets.transform&_uniq=0.6410806442145258" />
+<img src="http://178.62.243.213/render?from=-3months&until=now&width=600&height=750&_salt=1427812702.648&hideLegend=false&title=Enketo%20Core%20Transform%20Performance%202&vtitle=milliseconds&target=core.bench12.transform&target=core.bench6.transform&target=core.burundi.transform&target=core.bench1.transform&target=core.uganda.transform&target=core.bench11.transform&target=core.shop.transform&target=core.widgets.transform&_uniq=0.6410806442145258" />
 
 Notes:
 

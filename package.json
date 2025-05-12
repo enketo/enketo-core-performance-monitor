@@ -12,19 +12,28 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/enketo/enketo-core-performance-monitor.git"
-    },
     "keywords": [
         "Enketo",
         "enketo-core",
         "performance"
     ],
-    "author": "Martijn van de Rijdt <martijn@enketo.org> (https://enketo.org)",
+    "repository": "https://github.com/enketo/enketo-core-performance-monitor",
     "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/enketo/enketo-core-performance-monitor/issues"
+    "author": {
+        "name": "KoboToolbox",
+        "email": "enketo@kobotoolbox.org",
+        "url": "https://www.kobotoolbox.org/about-us/meet-the-team"
     },
-    "homepage": "https://github.com/enketo/enketo-core-performance-monitor"
+    "contributors": [
+        {
+            "name": "ODK",
+            "email": "support@getodk.org",
+            "url": "https://getodk.org/about/team"
+        },
+        {
+            "name": "Martijn van de Rijdt",
+            "email": "martijn@enketo.org",
+            "url": "https://github.com/MartijnR"
+        }
+    ],
 }

@@ -4,7 +4,7 @@
     "description": "app that continuously monitors the loading performance in headless Chrome of a set of benchmark XForms and posts results to a Graphite server",
     "main": "benchmark",
     "dependencies": {
-        "commander": "^10.0.0",
+        "commander": "^14.0.0",
         "graphite": "^0.1.5",
         "puppeteer": "^19.6.3"
     },
